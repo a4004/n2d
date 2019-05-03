@@ -3,8 +3,10 @@ An **easy to use** tool that will convert any ESP8266 development board into a d
 
 ![LOGO](https://raw.githubusercontent.com/mrvodka007/n2d/master/Icons/ICON_DEAUTHER.png)
 
-{empty} +
-{empty} +
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
 
 How to use the program (*for beginners*)
 
@@ -33,5 +35,7 @@ At this point you will need to reboot the development board, either by hititng t
 
 ![7](https://raw.githubusercontent.com/mrvodka007/n2d/master/Preview-IMG/ScreenShot8.PNG)
 
-{empty} +
-{empty} +
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
