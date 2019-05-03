@@ -1,7 +1,7 @@
 # N2D - Node2Deauther
 An **easy to use** tool that will convert any ESP8266 development board into a deauther as long as it's compatible with Space Huhns firmware.
 
-![LOGO](https://raw.githubusercontent.com/mrvodka007/n2d/master/Icons/ICON_DEAUTHER.png)\
+![LOGO](https://raw.githubusercontent.com/mrvodka007/n2d/master/Icons/ICON_DEAUTHER.png)
 
 
 
@@ -32,5 +32,5 @@ Then it will progress to this:\
 Once everything is complete you will be greeted with the final page where the connection details are given to you.
 At this point you will need to reboot the development board, either by hititng the reset switch or by unpluging it and pluging it back in.
 &nbsp;
-![7](https://raw.githubusercontent.com/mrvodka007/n2d/master/Preview-IMG/ScreenShot8.PNG)\\
+![7](https://raw.githubusercontent.com/mrvodka007/n2d/master/Preview-IMG/ScreenShot8.PNG)
 
