@@ -34,3 +34,7 @@ At this point you will need to reboot the development board, either by hititng t
 &nbsp;
 ![7](https://raw.githubusercontent.com/mrvodka007/n2d/master/Preview-IMG/ScreenShot8.PNG)
 
+
+
+
+If you are a developer / advanced user then the source code is in **Source Code\N2D-Master**.
