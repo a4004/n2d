@@ -26,7 +26,7 @@ You are okay, please keep in mind your device name could be differnet (that one 
 9. Once downloaded you will see this page:\
 ![5](https://raw.githubusercontent.com/mrvodka007/n2d/master/Preview-IMG/ScreenShot6.PNG)
 Then it will progress to this:\
-![6](https://raw.githubusercontent.com/mrvodka007/n2d/master/Preview-IMG/ScreenShot7.PNG)
+![6](https://raw.githubusercontent.com/mrvodka007/n2d/master/Preview-IMG/Update1-FLASH.PNG)
 10. The flash process should take around 50 seconds but no longer than 2 minutes.
 
 Once everything is complete you will be greeted with the final page where the connection details are given to you.
