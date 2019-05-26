@@ -3,7 +3,7 @@ An **easy to use** tool that will convert any ESP8266 development board into a d
 
 ![LOGO](https://raw.githubusercontent.com/mrvodka007/n2d/master/Icons/ICON_DEAUTHER.png)
 
-
+# New Update: Added nice progressbar on flashing page. There isn't much to improve apart from detect more boards which is coming!
 
 
 How to use the program (*for beginners*)
