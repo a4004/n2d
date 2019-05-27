@@ -19,9 +19,36 @@ namespace N2D
     {
 
 
-        public string Ports = string.Empty;
-        public string devicename = string.Empty;
+        public List<string> Ports = new List<string>();
+        public List<string> devicename = new List<string>();
+        public string CurrentPort;
 
+        public void DestroyApp(bool Safe)
+        {
+            if (Safe)
+            {
+                try
+                {
+                    foreach (Control obj in this.Controls)
+                    {
+                        obj.Dispose();
+                    
+                    }
+                    this.Dispose();
+                    Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"N2D Failed to exit safely, using Environment.Exit(); - Error Message: {ex.Message}", "Safe Exit Violation", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                    Environment.Exit(1);
+                }
+            }
+            else if(!Safe)
+            {
+                Environment.Exit(0);
+            }
+
+        }
 
         public MainWindow()
         {
@@ -62,7 +89,8 @@ namespace N2D
         }
         private void Close_btn_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DestroyApp(true);
+          
         }
         private void Close_btn_MouseLeave(object sender, EventArgs e)
         {
@@ -112,42 +140,60 @@ namespace N2D
             COM_DEVICE.Parity = System.IO.Ports.Parity.None;
             COM_DEVICE.StopBits = System.IO.Ports.StopBits.Two;
 
-            while (Ports.Length != 4)
+            while (Ports.Count != 1)
             {
                 var instances = new ManagementClass("Win32_SerialPort").GetInstances();
                 foreach (ManagementObject port in instances)
                 {
-                    Ports += port["deviceid"].ToString();
-                    devicename += port["name"].ToString();
+                    Ports.Add(port["deviceid"].ToString());
+                    devicename.Add(port["name"].ToString());
 
                 }
+                instances.Dispose();
             }
 
 
         }
+        public void CopyStream(Stream input, Stream output)
+        {
 
+            byte[] buffer = new byte[8192];
+
+            int bytesRead;
+            while ((bytesRead = input.Read(buffer, 0, buffer.Length)) > 0)
+            {
+                output.Write(buffer, 0, bytesRead);
+            }
+        }
 
         private void Board_Sniffer_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             icon1.Image = N2D.Properties.Resources.done;
             icon2.Image = N2D.Properties.Resources.inprog;
-            name.Text = "Name: " + devicename;
+            name.Text = "Name: " + devicename[0];
+            CurrentPort = Ports[0];
+
+            foreach (Object obj in Ports)
+            {
+                com_list.Items.Add(obj);
+            }
+
             pag2.Visible = true;
 
         }
 
-        int plus = 2;
+        int plus = 3;
         private void Loading_t_Tick(object sender, EventArgs e)
         {
             block.Left = block.Left + plus;
 
             if (block.Left > 342)
             {
-                plus = -2;
+                plus = -3;
             }
             if (block.Left < 0)
             {
-                plus = 2;
+                plus = 3;
             }
         }
 
@@ -164,17 +210,18 @@ namespace N2D
             CheckForIllegalCrossThreadCalls = false;
             try
             {
+                log.AppendText("NOTE: If you did not manually select a COM Port esptool.py will auto-detect.\r\n");
                 log.ForeColor = Color.Cyan;
                 DownloadManager dwm = new DownloadManager(DownloadManager.DownloadMode.BIN1MB);
                 dwm.ShowDialog();
 
-                status_flash.Text = "Getting ready to flash.....";
+                status_flash.Text = "Preparing to flash device on " + CurrentPort + "...";
                 if (!COM_DEVICE.IsOpen)
-                    COM_DEVICE.PortName = Ports;
+                    COM_DEVICE.PortName = CurrentPort;
                 COM_DEVICE.StopBits = System.IO.Ports.StopBits.One;
                 COM_DEVICE.Open();
 
-                log.AppendText("\r\nCOM PORT: " + Ports + " is open! \r\n");
+                log.AppendText("\r\nCOM PORT: " + CurrentPort + " is open! \r\n");
                 log.AppendText("Connecting to ESP8266....\r\n");
 
                 COM_DEVICE.RtsEnable = false;
@@ -190,6 +237,7 @@ namespace N2D
 
 
                 log.AppendText("....done\r\n");
+             
                 Thread.Sleep(2000);
                 log.AppendText("Preparing firmware files.....\r\n");
 
@@ -214,9 +262,11 @@ namespace N2D
 
                 var script = path;
 
-
-
-                string argv = "--port " + Ports + " --baud 115200" + " --after no_reset" + " write_flash --flash_mode dio" + " 0x00000 " + binaryPath;
+                string argv;
+                if(CurrentPort != null)
+                  argv = "--port " + CurrentPort + " --baud 115200" + " write_flash --flash_mode dio" + " 0x00000 " + binaryPath;
+                else
+                  argv = " --baud 115200" + " write_flash --flash_mode dio" + " 0x00000 " + binaryPath;
 
 
                 log.AppendText("....done\r\n");
@@ -238,8 +288,8 @@ namespace N2D
                 icon2.Image = N2D.Properties.Resources.done;
                 icon3.Image = N2D.Properties.Resources.inprog;
                 log.AppendText("Flashing Device.....\r\n");
-                stat.Text = "Flashing.....";
-                status_flash.Text = "Flashing......";
+                stat.Text = "Flashing Device";
+                status_flash.Text = "Flashing your device, please wait....";
                
 
 
@@ -289,34 +339,32 @@ namespace N2D
          
         }
 
-        int plus2 = 2;
+        int dir = 1;
         private void Loading_t_2_Tick(object sender, EventArgs e)
         {
-            active_prog.Left = active_prog.Left + plus2;
+            if (circlebar.Value == 80)
+            {
 
-            if (active_prog.Left > 342)
-            {
-                plus2 = -3;
+                dir = -1;
+
+                circlebar.animationIterval = 10;
+
+
             }
-            if (active_prog.Left < 0)
+            else if (circlebar.Value == 20)
             {
-                plus2 = 3;
+
+                dir = +1;
+                circlebar.animationIterval = 5;
+
             }
+
+            circlebar.Value += dir;
         }
 
-
-
-        public void CopyStream(Stream input, Stream output)
+        private void Com_list_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            byte[] buffer = new byte[8192];
-
-            int bytesRead;
-            while ((bytesRead = input.Read(buffer, 0, buffer.Length)) > 0)
-            {
-                output.Write(buffer, 0, bytesRead);
-            }
+            CurrentPort = com_list.SelectedIndex.ToString();
         }
-
     }
 }
