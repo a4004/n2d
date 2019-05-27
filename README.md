@@ -1,12 +1,9 @@
 # N2D - Node2Deauther
 An **easy to use** tool that will convert any ESP8266 development board into a deauther as long as it's compatible with Space Huhns firmware.
 
-![LOGO](https://raw.githubusercontent.com/mrvodka007/n2d/master/Icons/ICON_DEAUTHER.png)
+## Latest Update: Handed auto-detection over to esptool.py (it does a better job) added manual COM Port contorl in case auto detection isn't reliable.
 
-# New Update: Added nice progressbar on flashing page. There isn't much to improve apart from detect more boards which is coming!
-
-
-How to use the program (*for beginners*)
+###### How to use the program (*for beginners*)
 
 1. On this page, click on **ReleaseWin32-64** then **N2D.exe** where is says 11MB look over to the right and click **Download**.
 2. Open the file that you have downloaded, and allow it through your anti-virus in case it warns you of unfamiliar apps. If Windows SmartScreen interfers, click **More Info** then **Run Anyway**.
