@@ -140,9 +140,8 @@ namespace N2D
             COM_DEVICE.Parity = System.IO.Ports.Parity.None;
             COM_DEVICE.StopBits = System.IO.Ports.StopBits.Two;
 
-            while (Ports.Count != 1)
-            {
-                var instances = new ManagementClass("Win32_SerialPort").GetInstances();
+           
+            var instances = new ManagementClass("Win32_SerialPort").GetInstances();
                 foreach (ManagementObject port in instances)
                 {
                     Ports.Add(port["deviceid"].ToString());
@@ -150,7 +149,7 @@ namespace N2D
 
                 }
                 instances.Dispose();
-            }
+            
 
 
         }
@@ -210,31 +209,35 @@ namespace N2D
             CheckForIllegalCrossThreadCalls = false;
             try
             {
-                log.AppendText("NOTE: If you did not manually select a COM Port esptool.py will auto-detect.\r\n");
+                
                 log.ForeColor = Color.Cyan;
                 DownloadManager dwm = new DownloadManager(DownloadManager.DownloadMode.BIN1MB);
                 dwm.ShowDialog();
 
                 status_flash.Text = "Preparing to flash device on " + CurrentPort + "...";
-                if (!COM_DEVICE.IsOpen)
-                    COM_DEVICE.PortName = CurrentPort;
-                COM_DEVICE.StopBits = System.IO.Ports.StopBits.One;
-                COM_DEVICE.Open();
+                if (CurrentPort != null)
+                {
+                    if (!COM_DEVICE.IsOpen)
+                        COM_DEVICE.PortName = CurrentPort;
+                    COM_DEVICE.StopBits = System.IO.Ports.StopBits.One;
+                    COM_DEVICE.Open();
 
-                log.AppendText("\r\nCOM PORT: " + CurrentPort + " is open! \r\n");
-                log.AppendText("Connecting to ESP8266....\r\n");
+                    log.AppendText("\r\nINFO: Manual Mode -- COM: " + CurrentPort + " is open! \r\n");
+                    log.AppendText("Connecting to ESP8266....\r\n");
 
-                COM_DEVICE.RtsEnable = false;
-                COM_DEVICE.DtrEnable = false;
-                Thread.Sleep(100); // resets the nodemcu / d1 mini
-                COM_DEVICE.RtsEnable = true;
-                COM_DEVICE.DtrEnable = true;
-                Thread.Sleep(100);
-                COM_DEVICE.RtsEnable = false;
-                COM_DEVICE.DtrEnable = false;
+                    COM_DEVICE.RtsEnable = false;
+                    COM_DEVICE.DtrEnable = false;
+                    Thread.Sleep(100); // resets the nodemcu / d1 mini
+                    COM_DEVICE.RtsEnable = true;
+                    COM_DEVICE.DtrEnable = true;
+                    Thread.Sleep(100);
+                    COM_DEVICE.RtsEnable = false;
+                    COM_DEVICE.DtrEnable = false;
 
-                COM_DEVICE.Close();
-
+                    COM_DEVICE.Close();
+                }
+                else
+                    log.AppendText("INFO: esptool.py is auto selecting your device.");
 
                 log.AppendText("....done\r\n");
              
