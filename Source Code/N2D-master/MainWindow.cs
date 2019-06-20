@@ -140,8 +140,9 @@ namespace N2D
             COM_DEVICE.Parity = System.IO.Ports.Parity.None;
             COM_DEVICE.StopBits = System.IO.Ports.StopBits.Two;
 
-           
-            var instances = new ManagementClass("Win32_SerialPort").GetInstances();
+            while (!(Ports.Count > 0 && devicename.Count > 0))
+            {
+                var instances = new ManagementClass("Win32_SerialPort").GetInstances();
                 foreach (ManagementObject port in instances)
                 {
                     Ports.Add(port["deviceid"].ToString());
@@ -149,7 +150,7 @@ namespace N2D
 
                 }
                 instances.Dispose();
-            
+            }
 
 
         }
@@ -367,7 +368,7 @@ namespace N2D
 
         private void Com_list_SelectedIndexChanged(object sender, EventArgs e)
         {
-            CurrentPort = com_list.SelectedIndex.ToString();
+            CurrentPort = com_list.SelectedItem.ToString();
         }
     }
 }
