@@ -32,9 +32,9 @@ do!
 ![4](https://raw.githubusercontent.com/mrvodka007/n2d/master/Preview-IMG/ScreenShot5.PNG)
 
 You are okay, please keep in mind your device name could be differnet (that one is mine).
-8. Click **Begin Flash**. The program will ask you to download or choose your firmware file. If you chose yes then you will need to browse for a file if nt the downloader will launch.
+8. Click **Begin Flash**. The program will ask you to download or choose your firmware file. 
 
-9. Once downloaded you will see this page:
+9.--- If you chose yes then you will need to browse for a file if nt the downloader will launch.
 
 ![5](https://raw.githubusercontent.com/mrvodka007/n2d/master/Preview-IMG/ScreenShot6.PNG)
 
