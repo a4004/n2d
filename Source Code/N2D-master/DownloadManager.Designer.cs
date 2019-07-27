@@ -45,7 +45,8 @@
             // close
             // 
             this.close.AutoSize = true;
-            this.close.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.close.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.close.ForeColor = System.Drawing.Color.Red;
             this.close.Location = new System.Drawing.Point(525, 0);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(25, 28);
@@ -67,16 +68,17 @@
             // 
             // base_prog
             // 
-            this.base_prog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
+            this.base_prog.BackColor = System.Drawing.Color.White;
             this.base_prog.Controls.Add(this.percentage_bar);
             this.base_prog.Location = new System.Drawing.Point(17, 83);
             this.base_prog.Name = "base_prog";
             this.base_prog.Size = new System.Drawing.Size(522, 28);
             this.base_prog.TabIndex = 2;
+            this.base_prog.Paint += new System.Windows.Forms.PaintEventHandler(this.Base_prog_Paint);
             // 
             // percentage_bar
             // 
-            this.percentage_bar.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.percentage_bar.BackColor = System.Drawing.Color.Cyan;
             this.percentage_bar.Location = new System.Drawing.Point(3, 0);
             this.percentage_bar.Name = "percentage_bar";
             this.percentage_bar.Size = new System.Drawing.Size(1, 28);
@@ -114,7 +116,7 @@
             // 
             // cancelbtn
             // 
-            this.cancelbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(35)))), ((int)(((byte)(72)))));
+            this.cancelbtn.BackColor = System.Drawing.Color.Purple;
             this.cancelbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(35)))), ((int)(((byte)(72)))));
             this.cancelbtn.FlatAppearance.BorderSize = 0;
             this.cancelbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -144,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(15)))), ((int)(((byte)(32)))));
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(551, 205);
             this.Controls.Add(this.title);
             this.Controls.Add(this.cancelbtn);

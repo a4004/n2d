@@ -34,8 +34,11 @@
             this.minimize_btn = new System.Windows.Forms.Label();
             this.menubar = new System.Windows.Forms.Panel();
             this.aboutlink = new System.Windows.Forms.LinkLabel();
+            this.icon3 = new System.Windows.Forms.PictureBox();
             this.status3 = new System.Windows.Forms.Label();
+            this.icon2 = new System.Windows.Forms.PictureBox();
             this.status2 = new System.Windows.Forms.Label();
+            this.icon1 = new System.Windows.Forms.PictureBox();
             this.status1 = new System.Windows.Forms.Label();
             this.msg1 = new System.Windows.Forms.Label();
             this.linelbl = new System.Windows.Forms.Label();
@@ -45,14 +48,21 @@
             this.flash = new System.Windows.Forms.Panel();
             this.finished = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.log = new System.Windows.Forms.RichTextBox();
+            this.circlebar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.status_flash = new System.Windows.Forms.Label();
             this.stat = new System.Windows.Forms.Label();
             this.wifi = new System.Windows.Forms.Label();
             this.flashbtn = new System.Windows.Forms.Button();
+            this.logo2 = new System.Windows.Forms.PictureBox();
             this.name = new System.Windows.Forms.Label();
             this.info2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.com_list = new System.Windows.Forms.ComboBox();
+            this.logo = new System.Windows.Forms.PictureBox();
             this.hint = new System.Windows.Forms.Label();
             this.base_block = new System.Windows.Forms.Panel();
             this.block = new System.Windows.Forms.Panel();
@@ -61,36 +71,27 @@
             this.COM_DEVICE = new System.IO.Ports.SerialPort(this.components);
             this.Board_Sniffer = new System.ComponentModel.BackgroundWorker();
             this.Loading_t = new System.Windows.Forms.Timer(this.components);
-            this.FlashDevice = new System.ComponentModel.BackgroundWorker();
             this.Loading_t_2 = new System.Windows.Forms.Timer(this.components);
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.circlebar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-            this.logo2 = new System.Windows.Forms.PictureBox();
-            this.logo = new System.Windows.Forms.PictureBox();
-            this.icon3 = new System.Windows.Forms.PictureBox();
-            this.icon2 = new System.Windows.Forms.PictureBox();
-            this.icon1 = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.com_list = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.ofd = new System.Windows.Forms.OpenFileDialog();
             this.menubar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icon3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon1)).BeginInit();
             this.mainpage.SuspendLayout();
             this.pag2.SuspendLayout();
             this.flash.SuspendLayout();
             this.finished.SuspendLayout();
-            this.base_block.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icon3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icon2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icon1)).BeginInit();
+            this.base_block.SuspendLayout();
             this.SuspendLayout();
             // 
             // close_btn
             // 
             this.close_btn.AutoSize = true;
-            this.close_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.close_btn.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.close_btn.ForeColor = System.Drawing.Color.Red;
             this.close_btn.Location = new System.Drawing.Point(770, 0);
             this.close_btn.Name = "close_btn";
             this.close_btn.Size = new System.Drawing.Size(25, 28);
@@ -104,10 +105,11 @@
             // minimize_btn
             // 
             this.minimize_btn.AutoSize = true;
-            this.minimize_btn.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimize_btn.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.minimize_btn.ForeColor = System.Drawing.Color.DodgerBlue;
             this.minimize_btn.Location = new System.Drawing.Point(739, 0);
             this.minimize_btn.Name = "minimize_btn";
-            this.minimize_btn.Size = new System.Drawing.Size(24, 28);
+            this.minimize_btn.Size = new System.Drawing.Size(25, 28);
             this.minimize_btn.TabIndex = 1;
             this.minimize_btn.Text = "_";
             this.minimize_btn.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -117,7 +119,7 @@
             // 
             // menubar
             // 
-            this.menubar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(25)))), ((int)(((byte)(32)))));
+            this.menubar.BackColor = System.Drawing.Color.Black;
             this.menubar.Controls.Add(this.aboutlink);
             this.menubar.Controls.Add(this.icon3);
             this.menubar.Controls.Add(this.status3);
@@ -128,6 +130,7 @@
             this.menubar.Controls.Add(this.msg1);
             this.menubar.Controls.Add(this.linelbl);
             this.menubar.Controls.Add(this.idriver_btn);
+            this.menubar.ForeColor = System.Drawing.Color.White;
             this.menubar.Location = new System.Drawing.Point(0, 0);
             this.menubar.Name = "menubar";
             this.menubar.Size = new System.Drawing.Size(168, 448);
@@ -135,10 +138,10 @@
             // 
             // aboutlink
             // 
-            this.aboutlink.ActiveLinkColor = System.Drawing.Color.Cyan;
+            this.aboutlink.ActiveLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.aboutlink.AutoSize = true;
             this.aboutlink.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.aboutlink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.aboutlink.LinkColor = System.Drawing.Color.Teal;
             this.aboutlink.Location = new System.Drawing.Point(12, 316);
             this.aboutlink.Name = "aboutlink";
             this.aboutlink.Size = new System.Drawing.Size(50, 20);
@@ -146,6 +149,16 @@
             this.aboutlink.TabStop = true;
             this.aboutlink.Text = "About";
             this.aboutlink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.Aboutlink_LinkClicked);
+            // 
+            // icon3
+            // 
+            this.icon3.Image = global::N2D.Properties.Resources.upcoming;
+            this.icon3.Location = new System.Drawing.Point(38, 193);
+            this.icon3.Name = "icon3";
+            this.icon3.Size = new System.Drawing.Size(104, 44);
+            this.icon3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icon3.TabIndex = 8;
+            this.icon3.TabStop = false;
             // 
             // status3
             // 
@@ -158,6 +171,16 @@
             this.status3.TabIndex = 7;
             this.status3.Text = "Flash!";
             // 
+            // icon2
+            // 
+            this.icon2.Image = global::N2D.Properties.Resources.upcoming;
+            this.icon2.Location = new System.Drawing.Point(38, 113);
+            this.icon2.Name = "icon2";
+            this.icon2.Size = new System.Drawing.Size(104, 44);
+            this.icon2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icon2.TabIndex = 6;
+            this.icon2.TabStop = false;
+            // 
             // status2
             // 
             this.status2.AutoSize = true;
@@ -168,6 +191,16 @@
             this.status2.Size = new System.Drawing.Size(134, 21);
             this.status2.TabIndex = 5;
             this.status2.Text = "Prepare Firmware";
+            // 
+            // icon1
+            // 
+            this.icon1.Image = global::N2D.Properties.Resources.inprog;
+            this.icon1.Location = new System.Drawing.Point(38, 37);
+            this.icon1.Name = "icon1";
+            this.icon1.Size = new System.Drawing.Size(104, 44);
+            this.icon1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.icon1.TabIndex = 4;
+            this.icon1.TabStop = false;
             // 
             // status1
             // 
@@ -202,10 +235,11 @@
             // 
             // idriver_btn
             // 
-            this.idriver_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(45)))), ((int)(((byte)(52)))));
+            this.idriver_btn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.idriver_btn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(45)))), ((int)(((byte)(52)))));
             this.idriver_btn.FlatAppearance.BorderSize = 0;
             this.idriver_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.idriver_btn.ForeColor = System.Drawing.Color.Black;
             this.idriver_btn.Location = new System.Drawing.Point(12, 401);
             this.idriver_btn.Name = "idriver_btn";
             this.idriver_btn.Size = new System.Drawing.Size(145, 35);
@@ -225,6 +259,7 @@
             this.mainpage.Name = "mainpage";
             this.mainpage.Size = new System.Drawing.Size(625, 417);
             this.mainpage.TabIndex = 3;
+            this.mainpage.Paint += new System.Windows.Forms.PaintEventHandler(this.Mainpage_Paint);
             // 
             // pag2
             // 
@@ -255,6 +290,7 @@
             this.flash.Size = new System.Drawing.Size(611, 405);
             this.flash.TabIndex = 7;
             this.flash.Visible = false;
+            this.flash.Paint += new System.Windows.Forms.PaintEventHandler(this.Flash_Paint);
             // 
             // finished
             // 
@@ -279,6 +315,16 @@
     "\'pwned\' with the password\r\n\'deauther\' - Then navigate to http://192.168.4.1\r\n\r\n\r" +
     "\nHAVE FUN!";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::N2D.Properties.Resources.done;
+            this.pictureBox1.Location = new System.Drawing.Point(213, 69);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(168, 108);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -291,15 +337,37 @@
             // 
             // log
             // 
-            this.log.BackColor = System.Drawing.Color.Black;
+            this.log.BackColor = System.Drawing.Color.LightGray;
             this.log.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.log.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.log.ForeColor = System.Drawing.Color.White;
-            this.log.Location = new System.Drawing.Point(111, 127);
+            this.log.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.log.Location = new System.Drawing.Point(102, 129);
             this.log.Name = "log";
             this.log.Size = new System.Drawing.Size(416, 217);
             this.log.TabIndex = 5;
             this.log.Text = "_";
+            // 
+            // circlebar
+            // 
+            this.circlebar.animated = true;
+            this.circlebar.animationIterval = 10;
+            this.circlebar.animationSpeed = 1;
+            this.circlebar.BackColor = System.Drawing.Color.Transparent;
+            this.circlebar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("circlebar.BackgroundImage")));
+            this.circlebar.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.circlebar.ForeColor = System.Drawing.Color.SeaGreen;
+            this.circlebar.LabelVisible = false;
+            this.circlebar.LineProgressThickness = 8;
+            this.circlebar.LineThickness = 5;
+            this.circlebar.Location = new System.Drawing.Point(451, 27);
+            this.circlebar.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.circlebar.MaxValue = 100;
+            this.circlebar.Name = "circlebar";
+            this.circlebar.ProgressBackColor = System.Drawing.Color.Transparent;
+            this.circlebar.ProgressColor = System.Drawing.Color.Lime;
+            this.circlebar.Size = new System.Drawing.Size(77, 77);
+            this.circlebar.TabIndex = 7;
+            this.circlebar.Value = 10;
             // 
             // status_flash
             // 
@@ -336,7 +404,7 @@
             // 
             // flashbtn
             // 
-            this.flashbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
+            this.flashbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.flashbtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(35)))), ((int)(((byte)(50)))));
             this.flashbtn.FlatAppearance.BorderSize = 0;
             this.flashbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -348,6 +416,16 @@
             this.flashbtn.Text = "Begin Flash";
             this.flashbtn.UseVisualStyleBackColor = false;
             this.flashbtn.Click += new System.EventHandler(this.Flashbtn_Click);
+            // 
+            // logo2
+            // 
+            this.logo2.Image = global::N2D.Properties.Resources.check64;
+            this.logo2.Location = new System.Drawing.Point(22, 97);
+            this.logo2.Name = "logo2";
+            this.logo2.Size = new System.Drawing.Size(560, 63);
+            this.logo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo2.TabIndex = 4;
+            this.logo2.TabStop = false;
             // 
             // name
             // 
@@ -370,6 +448,47 @@
             this.info2.TabIndex = 1;
             this.info2.Text = "Device Found!";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 183);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(228, 17);
+            this.label3.TabIndex = 8;
+            this.label3.Text = "Incorrect device? - Choose COM Port:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(19, 200);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(215, 15);
+            this.label4.TabIndex = 10;
+            this.label4.Text = "If device is still not found, please relaunch the app.";
+            // 
+            // com_list
+            // 
+            this.com_list.BackColor = System.Drawing.Color.Green;
+            this.com_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.com_list.ForeColor = System.Drawing.Color.Black;
+            this.com_list.FormattingEnabled = true;
+            this.com_list.Location = new System.Drawing.Point(295, 180);
+            this.com_list.Name = "com_list";
+            this.com_list.Size = new System.Drawing.Size(291, 25);
+            this.com_list.TabIndex = 9;
+            this.com_list.SelectedIndexChanged += new System.EventHandler(this.Com_list_SelectedIndexChanged);
+            // 
+            // logo
+            // 
+            this.logo.Image = global::N2D.Properties.Resources.ICON_DEAUTHER;
+            this.logo.Location = new System.Drawing.Point(25, 133);
+            this.logo.Name = "logo";
+            this.logo.Size = new System.Drawing.Size(580, 63);
+            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logo.TabIndex = 3;
+            this.logo.TabStop = false;
+            // 
             // hint
             // 
             this.hint.AutoSize = true;
@@ -382,7 +501,7 @@
             // 
             // base_block
             // 
-            this.base_block.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(5)))), ((int)(((byte)(10)))), ((int)(((byte)(15)))));
+            this.base_block.BackColor = System.Drawing.Color.Red;
             this.base_block.Controls.Add(this.block);
             this.base_block.Location = new System.Drawing.Point(117, 103);
             this.base_block.Name = "base_block";
@@ -391,10 +510,10 @@
             // 
             // block
             // 
-            this.block.BackColor = System.Drawing.Color.Cyan;
-            this.block.Location = new System.Drawing.Point(342, 0);
+            this.block.BackColor = System.Drawing.Color.White;
+            this.block.Location = new System.Drawing.Point(342, -6);
             this.block.Name = "block";
-            this.block.Size = new System.Drawing.Size(74, 10);
+            this.block.Size = new System.Drawing.Size(74, 16);
             this.block.TabIndex = 2;
             // 
             // info
@@ -427,135 +546,24 @@
             this.Loading_t.Interval = 5;
             this.Loading_t.Tick += new System.EventHandler(this.Loading_t_Tick);
             // 
-            // FlashDevice
-            // 
-            this.FlashDevice.WorkerSupportsCancellation = true;
-            this.FlashDevice.DoWork += new System.ComponentModel.DoWorkEventHandler(this.FlashDevice_DoWork);
-            // 
             // Loading_t_2
             // 
             this.Loading_t_2.Enabled = true;
             this.Loading_t_2.Interval = 1;
             this.Loading_t_2.Tick += new System.EventHandler(this.Loading_t_2_Tick);
             // 
-            // pictureBox1
+            // ofd
             // 
-            this.pictureBox1.Image = global::N2D.Properties.Resources.done;
-            this.pictureBox1.Location = new System.Drawing.Point(213, 69);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(168, 108);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // circlebar
-            // 
-            this.circlebar.animated = true;
-            this.circlebar.animationIterval = 10;
-            this.circlebar.animationSpeed = 1;
-            this.circlebar.BackColor = System.Drawing.Color.Transparent;
-            this.circlebar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("circlebar.BackgroundImage")));
-            this.circlebar.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.circlebar.ForeColor = System.Drawing.Color.SeaGreen;
-            this.circlebar.LabelVisible = false;
-            this.circlebar.LineProgressThickness = 8;
-            this.circlebar.LineThickness = 5;
-            this.circlebar.Location = new System.Drawing.Point(451, 27);
-            this.circlebar.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.circlebar.MaxValue = 100;
-            this.circlebar.Name = "circlebar";
-            this.circlebar.ProgressBackColor = System.Drawing.Color.Transparent;
-            this.circlebar.ProgressColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.circlebar.Size = new System.Drawing.Size(77, 77);
-            this.circlebar.TabIndex = 7;
-            this.circlebar.Value = 10;
-            // 
-            // logo2
-            // 
-            this.logo2.Image = global::N2D.Properties.Resources.check64;
-            this.logo2.Location = new System.Drawing.Point(22, 97);
-            this.logo2.Name = "logo2";
-            this.logo2.Size = new System.Drawing.Size(560, 63);
-            this.logo2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logo2.TabIndex = 4;
-            this.logo2.TabStop = false;
-            // 
-            // logo
-            // 
-            this.logo.Image = global::N2D.Properties.Resources.ICON_DEAUTHER;
-            this.logo.Location = new System.Drawing.Point(25, 133);
-            this.logo.Name = "logo";
-            this.logo.Size = new System.Drawing.Size(580, 63);
-            this.logo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logo.TabIndex = 3;
-            this.logo.TabStop = false;
-            // 
-            // icon3
-            // 
-            this.icon3.Image = global::N2D.Properties.Resources.upcoming;
-            this.icon3.Location = new System.Drawing.Point(38, 193);
-            this.icon3.Name = "icon3";
-            this.icon3.Size = new System.Drawing.Size(104, 44);
-            this.icon3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.icon3.TabIndex = 8;
-            this.icon3.TabStop = false;
-            // 
-            // icon2
-            // 
-            this.icon2.Image = global::N2D.Properties.Resources.upcoming;
-            this.icon2.Location = new System.Drawing.Point(38, 113);
-            this.icon2.Name = "icon2";
-            this.icon2.Size = new System.Drawing.Size(104, 44);
-            this.icon2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.icon2.TabIndex = 6;
-            this.icon2.TabStop = false;
-            // 
-            // icon1
-            // 
-            this.icon1.Image = global::N2D.Properties.Resources.inprog;
-            this.icon1.Location = new System.Drawing.Point(38, 37);
-            this.icon1.Name = "icon1";
-            this.icon1.Size = new System.Drawing.Size(104, 44);
-            this.icon1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.icon1.TabIndex = 4;
-            this.icon1.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(19, 183);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(228, 17);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Incorrect device? - Choose COM Port:";
-            // 
-            // com_list
-            // 
-            this.com_list.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.com_list.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.com_list.ForeColor = System.Drawing.Color.White;
-            this.com_list.FormattingEnabled = true;
-            this.com_list.Location = new System.Drawing.Point(295, 180);
-            this.com_list.Name = "com_list";
-            this.com_list.Size = new System.Drawing.Size(291, 25);
-            this.com_list.TabIndex = 9;
-            this.com_list.SelectedIndexChanged += new System.EventHandler(this.Com_list_SelectedIndexChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(19, 200);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(215, 15);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "If device is still not found, please relaunch the app.";
+            this.ofd.FileName = "firmware.ino.bin";
+            this.ofd.ReadOnlyChecked = true;
+            this.ofd.RestoreDirectory = true;
+            this.ofd.Title = "Open a bin file";
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(15)))), ((int)(((byte)(22)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(4)))), ((int)(((byte)(9)))));
             this.ClientSize = new System.Drawing.Size(803, 448);
             this.Controls.Add(this.title);
             this.Controls.Add(this.mainpage);
@@ -577,6 +585,9 @@
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.MainWindow_MouseUp);
             this.menubar.ResumeLayout(false);
             this.menubar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.icon3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.icon1)).EndInit();
             this.mainpage.ResumeLayout(false);
             this.mainpage.PerformLayout();
             this.pag2.ResumeLayout(false);
@@ -585,13 +596,10 @@
             this.flash.PerformLayout();
             this.finished.ResumeLayout(false);
             this.finished.PerformLayout();
-            this.base_block.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icon3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icon2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.icon1)).EndInit();
+            this.base_block.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -628,7 +636,6 @@
         private System.Windows.Forms.PictureBox logo2;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label info2;
-        private System.ComponentModel.BackgroundWorker FlashDevice;
         private System.Windows.Forms.Panel flash;
         private System.Windows.Forms.Label stat;
         private System.Windows.Forms.RichTextBox log;
@@ -643,6 +650,7 @@
         private System.Windows.Forms.ComboBox com_list;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.OpenFileDialog ofd;
     }
 }
 

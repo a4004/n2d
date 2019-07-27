@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -9,6 +10,17 @@ namespace N2D
 {
     static class Program
     {
+
+
+
+        public static IntPtr ToIntPtr(this GCHandle target)
+        {
+            return GCHandle.ToIntPtr(target);
+        }
+        public static GCHandle ToGcHandle(this object target)
+        {
+            return GCHandle.Alloc(target);
+        }
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

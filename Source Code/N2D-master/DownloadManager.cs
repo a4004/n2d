@@ -709,7 +709,7 @@ namespace N2D
             Downloading = false;
             downloadTimer.Reset();
 
-            if (e.Error != null)
+            if (e.Error != null && !ExitReady)
             {
                 string error = e.Error.ToString();
 
@@ -784,6 +784,11 @@ namespace N2D
             }
             else
             { e.Cancel = false; }
+        }
+
+        private void Base_prog_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

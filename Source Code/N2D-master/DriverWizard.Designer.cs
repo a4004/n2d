@@ -41,7 +41,9 @@
             // close
             // 
             this.close.AutoSize = true;
-            this.close.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.close.BackColor = System.Drawing.Color.Black;
+            this.close.Font = new System.Drawing.Font("Consolas", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.close.ForeColor = System.Drawing.Color.Red;
             this.close.Location = new System.Drawing.Point(465, 0);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(25, 28);
@@ -83,14 +85,15 @@
             // 
             // options
             // 
-            this.options.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(1)))), ((int)(((byte)(15)))), ((int)(((byte)(22)))));
+            this.options.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.options.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.options.ForeColor = System.Drawing.Color.White;
             this.options.FormattingEnabled = true;
             this.options.Items.AddRange(new object[] {
             "CP2102",
             "CH340",
-            "I don\'t know - Install Both"});
+            "I don\'t know",
+            "FTDI"});
             this.options.Location = new System.Drawing.Point(97, 119);
             this.options.Name = "options";
             this.options.Size = new System.Drawing.Size(312, 25);
@@ -99,7 +102,7 @@
             // 
             // download
             // 
-            this.download.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(15)))), ((int)(((byte)(32)))));
+            this.download.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.download.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(15)))), ((int)(((byte)(32)))));
             this.download.FlatAppearance.BorderSize = 0;
             this.download.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -117,7 +120,7 @@
             this.notice.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.notice.Location = new System.Drawing.Point(12, 256);
             this.notice.Name = "notice";
-            this.notice.Size = new System.Drawing.Size(463, 26);
+            this.notice.Size = new System.Drawing.Size(464, 26);
             this.notice.TabIndex = 6;
             this.notice.Text = "NOTE: An internet connection is REQUIRED and you must grant this app access throu" +
     "gh  \r\n            your firewall.";
@@ -126,7 +129,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(35)))), ((int)(((byte)(52)))));
+            this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(495, 291);
             this.Controls.Add(this.notice);
             this.Controls.Add(this.download);

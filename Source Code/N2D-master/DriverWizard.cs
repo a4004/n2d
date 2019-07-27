@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -72,6 +73,10 @@ namespace N2D
             {
                 DownloadManager downloadManager = new DownloadManager(DownloadManager.DownloadMode.DriverBOTH);
                 downloadManager.Show();
+            }
+            if (options.SelectedIndex == 3)
+            {
+                Process.Start("https://www.ftdichip.com/FTDrivers.htm");
             }
             this.Close();
 

@@ -39,7 +39,7 @@
             // 
             // logo
             // 
-            this.logo.Image = global::N2D.Properties.Resources.ICON_DEAUTHER;
+            this.logo.Image = global::N2D.Properties.Resources.LIGHT_ICON;
             this.logo.Location = new System.Drawing.Point(13, 5);
             this.logo.Margin = new System.Windows.Forms.Padding(4);
             this.logo.Name = "logo";
@@ -66,9 +66,9 @@
             this.version.Location = new System.Drawing.Point(245, 40);
             this.version.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.version.Name = "version";
-            this.version.Size = new System.Drawing.Size(71, 17);
+            this.version.Size = new System.Drawing.Size(61, 17);
             this.version.TabIndex = 2;
-            this.version.Text = "version 1.0";
+            this.version.Text = "version 2";
             // 
             // info
             // 
@@ -77,16 +77,17 @@
             this.info.Location = new System.Drawing.Point(182, 75);
             this.info.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.info.Name = "info";
-            this.info.Size = new System.Drawing.Size(278, 105);
+            this.info.Size = new System.Drawing.Size(277, 105);
             this.info.TabIndex = 3;
             this.info.Text = resources.GetString("info.Text");
             // 
             // close
             // 
-            this.close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(100)))));
+            this.close.BackColor = System.Drawing.Color.Maroon;
             this.close.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(100)))));
             this.close.FlatAppearance.BorderSize = 0;
             this.close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.close.ForeColor = System.Drawing.Color.White;
             this.close.Location = new System.Drawing.Point(370, 188);
             this.close.Name = "close";
             this.close.Size = new System.Drawing.Size(90, 26);
@@ -99,7 +100,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(20)))), ((int)(((byte)(35)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(473, 226);
             this.Controls.Add(this.close);
             this.Controls.Add(this.info);
@@ -107,7 +108,7 @@
             this.Controls.Add(this.name);
             this.Controls.Add(this.logo);
             this.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.Color.White;
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);

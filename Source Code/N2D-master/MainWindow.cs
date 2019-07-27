@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Management;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -18,6 +19,28 @@ namespace N2D
     public partial class MainWindow : Form
     {
 
+        public Thread FlashDevice;
+
+        [Flags]
+        public enum ThreadAccess : int
+        {
+            TERMINATE = (0x0001),
+            SUSPEND_RESUME = (0x0002),
+            GET_CONTEXT = (0x0008),
+            SET_CONTEXT = (0x0010),
+            SET_INFORMATION = (0x0020),
+            QUERY_INFORMATION = (0x0040),
+            SET_THREAD_TOKEN = (0x0080),
+            IMPERSONATE = (0x0100),
+            DIRECT_IMPERSONATION = (0x0200)
+        }
+
+        [DllImport("kernel32.dll")]
+        static extern IntPtr OpenThread(ThreadAccess dwDesiredAccess, bool bInheritHandle, uint dwThreadId);
+        [DllImport("kernel32.dll")]
+        static extern uint SuspendThread(IntPtr hThread);
+        [DllImport("kernel32.dll")]
+        static extern int ResumeThread(IntPtr hThread);
 
         public List<string> Ports = new List<string>();
         public List<string> devicename = new List<string>();
@@ -53,6 +76,7 @@ namespace N2D
         public MainWindow()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
         }
 
         #region UI-Support
@@ -197,23 +221,88 @@ namespace N2D
             }
         }
 
+      
+
+
         private void Flashbtn_Click(object sender, EventArgs e)
         {
             flash.Visible = true;
             Loading_t_2.Start();
-            FlashDevice.RunWorkerCompleted += new RunWorkerCompletedEventHandler(FlashDevice_Done);
-            FlashDevice.RunWorkerAsync();
+            FlashDevice = new Thread(new ThreadStart(FlashDevice_DoWork));
+            FlashDevice.Start();
+            Thread xColor = new Thread(new ThreadStart(Colorchange_Tick));
+            xColor.Start();
         }
 
-        private void FlashDevice_DoWork(object sender, DoWorkEventArgs e)
+        [Obsolete]
+        public void FlashDevice_DoWork()
         {
+            string binaryPath = string.Empty;
             CheckForIllegalCrossThreadCalls = false;
             try
             {
+                DialogResult dg = MessageBox.Show("Do you want to use a custom image for your device? - If unsure, just choose 'No' and the recommended will be applied.", "Correct Image?", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2, MessageBoxOptions.DefaultDesktopOnly);
                 
-                log.ForeColor = Color.Cyan;
-                DownloadManager dwm = new DownloadManager(DownloadManager.DownloadMode.BIN1MB);
-                dwm.ShowDialog();
+                if (dg == DialogResult.Yes)
+                {
+
+                    _ = BeginInvoke(new MethodInvoker(() =>
+                         {
+                             FlashDevice.Suspend();
+
+
+                             stat.Text = "Loading Image";
+                             status_flash.Text = "Reading binary....";
+                             ofd.Filter = "Binary Images | *.bin";
+                             ofd.InitialDirectory = "C:\\";
+
+                             DialogResult res = ofd.ShowDialog();
+
+
+                             if (res == DialogResult.OK)
+                             {
+                                 binaryPath = ofd.FileName;
+                                 FlashDevice.Resume();
+                             }
+                             else
+                             {
+                                 MessageBox.Show("No Image File Selected - Downloading...");
+                                 DownloadManager dwmx = new DownloadManager(DownloadManager.DownloadMode.BIN1MB);
+                                 dwmx.ShowDialog();
+
+                                 binaryPath = dwmx.binary1mb;
+                                 FlashDevice.Resume();
+                             }
+
+                         }));
+              
+
+
+                }
+                  else if (dg == DialogResult.No)
+                {
+
+                    BeginInvoke(new MethodInvoker(() =>
+                    {
+                        FlashDevice.Suspend();
+                        DownloadManager dwm = new DownloadManager(DownloadManager.DownloadMode.BIN1MB);
+                        dwm.ShowDialog();
+                        binaryPath = dwm.binary1mb;
+                        FlashDevice.Resume();
+                    }));
+
+
+
+                }
+
+
+
+                log.ForeColor = Color.Blue;
+              
+
+             
+
+                
 
                 status_flash.Text = "Preparing to flash device on " + CurrentPort + "...";
                 if (CurrentPort != null)
@@ -246,7 +335,7 @@ namespace N2D
                 log.AppendText("Preparing firmware files.....\r\n");
 
                 string dir = Directory.GetCurrentDirectory().ToString() + "\\";
-                string binaryPath = dwm.binary1mb;
+              
 
 
                 log.AppendText("....done\r\n");
@@ -309,7 +398,7 @@ namespace N2D
                 Thread.Sleep(2000);
 
 
-                log.ForeColor = Color.Lime;
+                log.ForeColor = Color.Green;
                 log.AppendText("Success! - Your " + devicename + " has been converted into a deauther!\r\n");
                 icon3.Image = N2D.Properties.Resources.done;
 
@@ -322,10 +411,12 @@ namespace N2D
                 Thread.Sleep(100);
                 COM_DEVICE.RtsEnable = false;
                 COM_DEVICE.DtrEnable = false;
-          
+                this.BeginInvoke(new MethodInvoker(() => { FlashDevice_Done(); }));
             }
             catch (Exception ex){
-
+                stat.Text = "Uh oh!";
+                status_flash.Text = "A problem has occured";
+                circlebar.Visible = false;
                 log.ForeColor = Color.Red;
                 log.AppendText("Something went wrong! - Restarting in 30s\r\n" + ex.Message);
                 COM_DEVICE.RtsEnable = true;
@@ -337,10 +428,11 @@ namespace N2D
             }
         }
 
-        private void FlashDevice_Done(object sender, RunWorkerCompletedEventArgs e)
+        private void FlashDevice_Done()
         {
             finished.Visible = true;
-         
+            
+
         }
 
         int dir = 1;
@@ -369,6 +461,43 @@ namespace N2D
         private void Com_list_SelectedIndexChanged(object sender, EventArgs e)
         {
             CurrentPort = com_list.SelectedItem.ToString();
+        }
+
+        private void Mainpage_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void Flash_Paint(object sender, PaintEventArgs e)
+        {
+         
+        }
+
+        private void Colorchange_Tick()
+        {
+            CheckForIllegalCrossThreadCalls = false;
+            while (true)
+            {
+                circlebar.ProgressColor = System.Drawing.Color.Red;
+                Thread.Sleep(200);
+                circlebar.ProgressColor = System.Drawing.Color.DarkRed;
+                Thread.Sleep(200);
+                circlebar.ProgressColor = System.Drawing.Color.Orange;
+                Thread.Sleep(200);
+                circlebar.ProgressColor = System.Drawing.Color.Yellow;
+                Thread.Sleep(200);
+                circlebar.ProgressColor = System.Drawing.Color.Green;
+                Thread.Sleep(200);
+                circlebar.ProgressColor = System.Drawing.Color.DarkGreen;
+                Thread.Sleep(200);
+                circlebar.ProgressColor = System.Drawing.Color.Blue;
+                Thread.Sleep(200);
+                circlebar.ProgressColor = System.Drawing.Color.DarkBlue;
+                Thread.Sleep(200);
+                circlebar.ProgressColor = System.Drawing.Color.Violet;
+                Thread.Sleep(200);
+            }
+
         }
     }
 }

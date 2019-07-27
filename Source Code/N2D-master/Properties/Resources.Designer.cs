@@ -61,6 +61,26 @@ namespace N2D.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] Bunifu_UI_v1_5_3 {
+            get {
+                object obj = ResourceManager.GetObject("Bunifu_UI_v1_5_3", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap check64 {
+            get {
+                object obj = ResourceManager.GetObject("check64", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap done {
@@ -106,6 +126,16 @@ namespace N2D.Properties {
         internal static System.Drawing.Bitmap inprog {
             get {
                 object obj = ResourceManager.GetObject("inprog", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap LIGHT_ICON {
+            get {
+                object obj = ResourceManager.GetObject("LIGHT_ICON", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
