@@ -2,7 +2,7 @@
 
 An **easy to use** tool that will convert any ESP8266 development board into a deauther as long as it's compatible with Space Huhns firmware.
 
-### Latest Update: Custom .bin selection is avaliable and additional drivers added. Also it has a new nice UI :)
+### UPDATE: Advanced version of N2D for advanced users (or anyone who wants customization) https://github.com/mrvodka007/n2dX
 
 ###### How to use the program (*for beginners*)
 
