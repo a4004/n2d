@@ -1,3 +1,2 @@
-<h1 align="center">N2D - Node2Deauther</h1>
-
-## N2D V2 will be live on this page at approximately 7PM tomorrow UK Time.
+<h1 align="center">Node2Deauther V2!</h1>
+## V2 is finally here! It's simple, it's new and it works!
