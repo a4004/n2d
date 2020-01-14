@@ -3,6 +3,8 @@
 
 ---
 
-<h6> Check it out:    </h6> [Download N2D](https://github.com/mrvodka007/n2d/raw/master/ReleaseEXE/N2D2.exe "Download N2D")
+<h6> Check it out: </h6>
+[Download N2D](https://github.com/mrvodka007/n2d/raw/master/ReleaseEXE/N2D2.exe)
+
 
 ![N2D ScreenShot1](https://raw.githubusercontent.com/mrvodka007/n2d/master/Preview-IMG/ScreenShot1.PNG "Screenshot")
