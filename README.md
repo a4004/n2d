@@ -3,8 +3,9 @@
 
 ---
 
-<h4> N2D is essentially a wrapper for esptool.py and runs natively on Windows 10. It is made for beginners who just bought their ESP8266 and wish to use it as a deauther using SpaceHuhns software. </h4>
+<h4> N2D is essentially a wrapper for esptool.py and runs natively on Windows 10. All you have to do is run the software and let the magic happen before your eyes.</h4>
 
+> Important! - The driver wizard has been removed as it causes confusion as there are too many UART chips to support. If you need help, open an issue.
 
 <h6> Check it out: </h6>
 
