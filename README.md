@@ -5,7 +5,7 @@
 
 <h4> N2D is essentially a wrapper for esptool.py and runs natively on Windows 10. All you have to do is run the software and let the magic happen before your eyes.</h4>
 
-> Important! - The driver wizard has been removed as it causes confusion as there are too many UART chips to support. If you need help, open an issue.
+> Important! - The driver wizard has been removed becuase it causes confusion as there are too many UART chips to support. If you need help, open an issue.
 
 <h6> Check it out: </h6>
 
