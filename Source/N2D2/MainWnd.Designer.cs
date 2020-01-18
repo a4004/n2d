@@ -52,6 +52,7 @@
             this.progC1 = new Bunifu.Framework.UI.BunifuColorTransition(this.components);
             this.progC2 = new Bunifu.Framework.UI.BunifuColorTransition(this.components);
             this.errorFader = new System.Windows.Forms.Timer(this.components);
+            this.okFader = new System.Windows.Forms.Timer(this.components);
             this.stageBack.SuspendLayout();
             this.debugBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
@@ -87,7 +88,7 @@
             // progressFaderT
             // 
             this.progressFaderT.Enabled = true;
-            this.progressFaderT.Interval = 50;
+            this.progressFaderT.Interval = 25;
             this.progressFaderT.Tick += new System.EventHandler(this.progressFaderT_Tick);
             // 
             // animatedCircle
@@ -271,6 +272,11 @@
             this.errorFader.Interval = 50;
             this.errorFader.Tick += new System.EventHandler(this.errorFader_Tick);
             // 
+            // okFader
+            // 
+            this.okFader.Interval = 50;
+            this.okFader.Tick += new System.EventHandler(this.okFader_Tick);
+            // 
             // MainWnd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
@@ -331,6 +337,7 @@
         private Bunifu.Framework.UI.BunifuColorTransition progC1;
         private Bunifu.Framework.UI.BunifuColorTransition progC2;
         private System.Windows.Forms.Timer errorFader;
+        private System.Windows.Forms.Timer okFader;
     }
 }
 

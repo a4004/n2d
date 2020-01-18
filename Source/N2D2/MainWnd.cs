@@ -158,9 +158,11 @@ namespace N2D2
         private void ShutdownSeq()
         {
             IncrementStage();
+            
 
             this.BeginInvoke(new MethodInvoker(() =>
             {
+                okFader.Start();
                 titleLbl.Text = "Finished";
                 captionLbl.Text = "You may now disconnect the device";
 
@@ -383,6 +385,9 @@ namespace N2D2
 
         private void errorFader_Tick(object sender, EventArgs e)
         {
+            progC1.Color2 = Color.Red;
+            progC2.Color2 = Color.FromArgb(255, 90, 90);
+
             progC1.Color1 = progressFader.Color1;
             progC2.Color1 = progressFader.Color2;
 
@@ -397,6 +402,26 @@ namespace N2D2
             if (progC1.ProgessValue == 100 && progC2.ProgessValue == 100)
                 errorFader.Stop();
 
+        }
+
+        private void okFader_Tick(object sender, EventArgs e)
+        {
+            progC1.Color2 = Color.Green;
+            progC2.Color2 = Color.Lime;
+
+            progC1.Color1 = progressFader.Color1;
+            progC2.Color1 = progressFader.Color2;
+
+            if (progC1.ProgessValue != 100)
+                progC1.ProgessValue++;
+            if (progC2.ProgessValue != 100)
+                progC2.ProgessValue++;
+
+            progressFader.Color1 = progC1.Value;
+            progressFader.Color2 = progC2.Value;
+
+            if (progC1.ProgessValue == 100 && progC2.ProgessValue == 100)
+                errorFader.Stop();
         }
     }
 }
