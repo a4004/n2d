@@ -166,7 +166,31 @@ namespace N2D2
                 animatedCircle.Stop();
                 exitBtn.Show();
             }));
+        }
 
+        private void ErrorOut(string message = null)
+        {
+            this.BeginInvoke(new MethodInvoker(() =>
+            {
+
+                titleLbl.Text = "Something went wrong";
+                captionLbl.Text = "N2D encourntered an error, please restart N2D";
+
+                circleProg.Hide();
+                animatedCircle.Stop();
+                exitBtn.Show();
+
+                if (!(message == null))
+                    LogActivity(message, LogType.Error);
+
+                stageProgress.BackColor = Color.Red;
+                circleProg.ProgressColor = Color.Red;
+                titleLbl.ForeColor = Color.Red;
+                debugBorder.BackColor = Color.Red;
+                helpBtn.FlatAppearance.BorderColor = Color.Red;
+                discordLink.LinkColor = Color.Red;
+                discordLink.VisitedLinkColor = Color.Red;
+            }));
         }
 
         private void CopyStream(Stream input, Stream output)
@@ -193,12 +217,33 @@ namespace N2D2
         {
             await Task.Delay(1000);
 
-            await Search4Devices();
-            LogActivity("Device Found at: " + serialPort, LogType.Info);
-            await Prepare2Flash();
-            LogActivity("Download Complete", LogType.Info);
-            await FlashZeDevice();
-            LogActivity("Flash Complete!", LogType.Info);
+            var x = await Search4Devices();
+            if (x == "OK")
+                LogActivity("Device Found at: " + serialPort, LogType.Info);
+            else
+            {
+                ErrorOut("Could not scan for COM devices.");
+                return;
+            }
+              
+            var y = await Prepare2Flash();
+            if (y == "OK")
+                LogActivity("Download Complete", LogType.Info);
+            else
+            {
+                ErrorOut();
+                return;
+            }
+            
+            var z = await FlashZeDevice();
+            if (z == "OK")
+                LogActivity("Flash Complete!", LogType.Info);
+            else
+            {
+                ErrorOut();
+                return;
+            }
+            
 
             ShutdownSeq();
         }
@@ -208,7 +253,7 @@ namespace N2D2
             Process.Start("https://discord.gg/feBejBT");
         }
 
-        private async Task Search4Devices()
+        private async Task<string> Search4Devices()
         {
             LogActivity("Searching for devices . . .", LogType.Info);
 
@@ -227,11 +272,12 @@ namespace N2D2
             serialName = SerialNames[0];
             serialPort = SerialPorts[0];
 
-            IncrementStage();            
-            await Task.CompletedTask;
+            IncrementStage();
+
+            return "OK";
         }
 
-        private async Task Prepare2Flash()
+        private async Task<string> Prepare2Flash()
         {
             LogActivity("Preparing to flash . . .", LogType.Info);
             UpdateLabel(titleLbl, "Preparing");
@@ -260,19 +306,18 @@ namespace N2D2
                 }
                 catch (Exception e)
                 {
-                    UpdateLabel(titleLbl, "Uh Oh!");
-                    UpdateLabel(captionLbl, "That didn't work");
 
                     LogActivity("Download Failed becuase: " + e.Message, LogType.Error);
-                    LogActivity(" --- N2D must be restarted", LogType.Warning);
+
+                    return "ERROR";
                 }
             }
 
             IncrementStage();
-            await Task.CompletedTask;
+            return "OK";
         }
 
-        private async Task FlashZeDevice()
+        private async Task<string> FlashZeDevice()
         {
             LogActivity("Flashing Device . . .", LogType.Info);
             UpdateLabel(titleLbl, "Flashing");
@@ -316,9 +361,13 @@ namespace N2D2
                 Process.Start("cmd", "/c taskkill /f /im flash_module.exe");
                 File.Delete("flash_module.exe");
             }
-            catch { }
+            catch (Exception e) { 
+                LogActivity("Flash Failed because: " + e.Message, LogType.Error);
 
-            await Task.CompletedTask;
+                return "ERROR";
+            }
+
+            return "OK";
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
