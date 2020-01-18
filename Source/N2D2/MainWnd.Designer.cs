@@ -49,6 +49,9 @@
             this.logoBox = new System.Windows.Forms.PictureBox();
             this.circleProg = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.exitBtn = new System.Windows.Forms.Button();
+            this.progC1 = new Bunifu.Framework.UI.BunifuColorTransition(this.components);
+            this.progC2 = new Bunifu.Framework.UI.BunifuColorTransition(this.components);
+            this.errorFader = new System.Windows.Forms.Timer(this.components);
             this.stageBack.SuspendLayout();
             this.debugBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.logoBox)).BeginInit();
@@ -240,7 +243,7 @@
             // exitBtn
             // 
             this.exitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
-            this.exitBtn.FlatAppearance.BorderColor = System.Drawing.Color.LimeGreen;
+            this.exitBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitBtn.Location = new System.Drawing.Point(445, 282);
             this.exitBtn.Name = "exitBtn";
@@ -250,6 +253,23 @@
             this.exitBtn.UseVisualStyleBackColor = false;
             this.exitBtn.Visible = false;
             this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            // 
+            // progC1
+            // 
+            this.progC1.Color1 = System.Drawing.Color.White;
+            this.progC1.Color2 = System.Drawing.Color.Red;
+            this.progC1.ProgessValue = 0;
+            // 
+            // progC2
+            // 
+            this.progC2.Color1 = System.Drawing.Color.White;
+            this.progC2.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(90)))), ((int)(((byte)(90)))));
+            this.progC2.ProgessValue = 0;
+            // 
+            // errorFader
+            // 
+            this.errorFader.Interval = 50;
+            this.errorFader.Tick += new System.EventHandler(this.errorFader_Tick);
             // 
             // MainWnd
             // 
@@ -308,6 +328,9 @@
         private Bunifu.Framework.UI.BunifuColorTransition labelPulseCLR;
         private System.Windows.Forms.Timer labelPulser;
         private System.Windows.Forms.Button exitBtn;
+        private Bunifu.Framework.UI.BunifuColorTransition progC1;
+        private Bunifu.Framework.UI.BunifuColorTransition progC2;
+        private System.Windows.Forms.Timer errorFader;
     }
 }
 

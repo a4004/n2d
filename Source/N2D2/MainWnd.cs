@@ -131,14 +131,16 @@ namespace N2D2
         }
 
         int pulseDir = 5;
+        int negDir = -5;
+        int posDir = 5;
         private WebClient webC;
 
         private void labelPulser_Tick(object sender, EventArgs e)
         {
             if (labelPulseCLR.ProgessValue == 0)
-                pulseDir = +5;
+                pulseDir = posDir;
             if (labelPulseCLR.ProgessValue == 100)
-                pulseDir = -5;
+                pulseDir = negDir;
 
             labelPulseCLR.ProgessValue += pulseDir;
 
@@ -172,24 +174,23 @@ namespace N2D2
         {
             this.BeginInvoke(new MethodInvoker(() =>
             {
+                errorFader.Start();
 
                 titleLbl.Text = "Something went wrong";
                 captionLbl.Text = "N2D encourntered an error, please restart N2D";
+
+                posDir = 10;
+                negDir = -10;
 
                 circleProg.Hide();
                 animatedCircle.Stop();
                 exitBtn.Show();
 
+                
+
+
                 if (!(message == null))
                     LogActivity(message, LogType.Error);
-
-                stageProgress.BackColor = Color.Red;
-                circleProg.ProgressColor = Color.Red;
-                titleLbl.ForeColor = Color.Red;
-                debugBorder.BackColor = Color.Red;
-                helpBtn.FlatAppearance.BorderColor = Color.Red;
-                discordLink.LinkColor = Color.Red;
-                discordLink.VisitedLinkColor = Color.Red;
             }));
         }
 
@@ -378,6 +379,24 @@ namespace N2D2
         private void helpBtn_Click(object sender, EventArgs e)
         {
             Process.Start("https://github.com/mrvodka007/n2d/issues/new");
+        }
+
+        private void errorFader_Tick(object sender, EventArgs e)
+        {
+            progC1.Color1 = progressFader.Color1;
+            progC2.Color1 = progressFader.Color2;
+
+            if (progC1.ProgessValue != 100)
+                progC1.ProgessValue++;
+            if (progC2.ProgessValue != 100)
+                progC2.ProgessValue++;
+
+            progressFader.Color1 = progC1.Value;
+            progressFader.Color2 = progC2.Value;
+
+            if (progC1.ProgessValue == 100 && progC2.ProgessValue == 100)
+                errorFader.Stop();
+
         }
     }
 }
