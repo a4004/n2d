@@ -1,0 +1,12 @@
+C:\Users\Alex\Documents\GitHub\n2d\Source\N2D2\bin\Release\N2D2.exe.config
+C:\Users\Alex\Documents\GitHub\n2d\Source\N2D2\bin\Release\N2D2.exe
+C:\Users\Alex\Documents\GitHub\n2d\Source\N2D2\bin\Release\N2D2.pdb
+C:\Users\Alex\Documents\GitHub\n2d\Source\N2D2\bin\Release\Bunifu_UI_v1.5.3.dll
+C:\Users\Alex\Documents\GitHub\n2d\Source\N2D2\obj\Release\N2D2.csprojAssemblyReference.cache
+C:\Users\Alex\Documents\GitHub\n2d\Source\N2D2\obj\Release\N2D2.MainWnd.resources
+C:\Users\Alex\Documents\GitHub\n2d\Source\N2D2\obj\Release\N2D2.Properties.Resources.resources
+C:\Users\Alex\Documents\GitHub\n2d\Source\N2D2\obj\Release\N2D2.csproj.GenerateResource.cache
+C:\Users\Alex\Documents\GitHub\n2d\Source\N2D2\obj\Release\N2D2.csproj.CoreCompileInputs.cache
+C:\Users\Alex\Documents\GitHub\n2d\Source\N2D2\obj\Release\N2D2.csproj.CopyComplete
+C:\Users\Alex\Documents\GitHub\n2d\Source\N2D2\obj\Release\N2D2.exe
+C:\Users\Alex\Documents\GitHub\n2d\Source\N2D2\obj\Release\N2D2.pdb

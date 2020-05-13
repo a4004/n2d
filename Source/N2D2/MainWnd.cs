@@ -109,8 +109,7 @@ namespace N2D2
             titleLbl.ForeColor = progressFader.Value;
             debugBorder.BackColor = progressFader.Value;
             helpBtn.FlatAppearance.BorderColor = progressFader.Value;
-            discordLink.LinkColor = progressFader.Value;
-            discordLink.VisitedLinkColor = progressFader.Value;
+
             
         }
 
@@ -211,7 +210,7 @@ namespace N2D2
         {
             nodeService.Start();
             LogActivity("Started Services", LogType.Info);
-            LogActivity("This application uses the FRIST serial device avaliable, if you have any other RS232 devices plugged in, please remove them and restart N2D\nIf problems persist try using n2dx: https://github.com/mrvodka007/n2dx", LogType.Warning);
+            LogActivity("This app uses the first espressif serial device, remove any other RS232 devices or try https://github.com/mrvodka007/n2dx", LogType.Warning);
 
             
         }
@@ -251,10 +250,6 @@ namespace N2D2
             ShutdownSeq();
         }
 
-        private void discordLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            Process.Start("https://discord.gg/feBejBT");
-        }
 
         private async Task<string> Search4Devices()
         {

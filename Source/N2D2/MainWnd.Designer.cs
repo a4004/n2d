@@ -43,7 +43,6 @@
             this.debugBorder = new System.Windows.Forms.Panel();
             this.debugTitle = new System.Windows.Forms.Label();
             this.helpBtn = new System.Windows.Forms.Button();
-            this.discordLink = new System.Windows.Forms.LinkLabel();
             this.labelPulseCLR = new Bunifu.Framework.UI.BunifuColorTransition(this.components);
             this.labelPulser = new System.Windows.Forms.Timer(this.components);
             this.logoBox = new System.Windows.Forms.PictureBox();
@@ -99,40 +98,40 @@
             // titleLbl
             // 
             this.titleLbl.AutoSize = true;
-            this.titleLbl.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleLbl.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titleLbl.Location = new System.Drawing.Point(22, 30);
             this.titleLbl.Name = "titleLbl";
-            this.titleLbl.Size = new System.Drawing.Size(226, 25);
+            this.titleLbl.Size = new System.Drawing.Size(209, 30);
             this.titleLbl.TabIndex = 2;
             this.titleLbl.Text = "Connect your device";
             // 
             // captionLbl
             // 
             this.captionLbl.AutoSize = true;
-            this.captionLbl.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.captionLbl.Location = new System.Drawing.Point(23, 55);
+            this.captionLbl.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.captionLbl.Location = new System.Drawing.Point(23, 60);
             this.captionLbl.Name = "captionLbl";
-            this.captionLbl.Size = new System.Drawing.Size(169, 20);
+            this.captionLbl.Size = new System.Drawing.Size(158, 21);
             this.captionLbl.TabIndex = 3;
             this.captionLbl.Text = "Searching for devices";
             // 
             // titleApp
             // 
             this.titleApp.AutoSize = true;
-            this.titleApp.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.titleApp.Location = new System.Drawing.Point(93, 300);
+            this.titleApp.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titleApp.Location = new System.Drawing.Point(70, 294);
             this.titleApp.Name = "titleApp";
-            this.titleApp.Size = new System.Drawing.Size(156, 19);
+            this.titleApp.Size = new System.Drawing.Size(150, 21);
             this.titleApp.TabIndex = 5;
             this.titleApp.Text = "Node2Deauther V2";
             // 
             // captionApp
             // 
             this.captionApp.AutoSize = true;
-            this.captionApp.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.captionApp.Location = new System.Drawing.Point(94, 320);
+            this.captionApp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.captionApp.Location = new System.Drawing.Point(70, 315);
             this.captionApp.Name = "captionApp";
-            this.captionApp.Size = new System.Drawing.Size(107, 17);
+            this.captionApp.Size = new System.Drawing.Size(88, 15);
             this.captionApp.TabIndex = 6;
             this.captionApp.Text = "by mrvodka007";
             // 
@@ -162,9 +161,10 @@
             // debugTitle
             // 
             this.debugTitle.AutoSize = true;
+            this.debugTitle.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.debugTitle.Location = new System.Drawing.Point(9, 125);
             this.debugTitle.Name = "debugTitle";
-            this.debugTitle.Size = new System.Drawing.Size(87, 17);
+            this.debugTitle.Size = new System.Drawing.Size(77, 17);
             this.debugTitle.TabIndex = 9;
             this.debugTitle.Text = "Activity Log:";
             // 
@@ -173,6 +173,7 @@
             this.helpBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.helpBtn.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(116)))), ((int)(((byte)(255)))));
             this.helpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.helpBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.helpBtn.Location = new System.Drawing.Point(514, 282);
             this.helpBtn.Name = "helpBtn";
             this.helpBtn.Size = new System.Drawing.Size(139, 31);
@@ -180,22 +181,6 @@
             this.helpBtn.Text = "Help and Support";
             this.helpBtn.UseVisualStyleBackColor = false;
             this.helpBtn.Click += new System.EventHandler(this.helpBtn_Click);
-            // 
-            // discordLink
-            // 
-            this.discordLink.ActiveLinkColor = System.Drawing.Color.Lime;
-            this.discordLink.AutoSize = true;
-            this.discordLink.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.discordLink.ForeColor = System.Drawing.Color.Lime;
-            this.discordLink.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(116)))), ((int)(((byte)(255)))));
-            this.discordLink.Location = new System.Drawing.Point(93, 340);
-            this.discordLink.Name = "discordLink";
-            this.discordLink.Size = new System.Drawing.Size(101, 16);
-            this.discordLink.TabIndex = 11;
-            this.discordLink.TabStop = true;
-            this.discordLink.Text = "Discord Server";
-            this.discordLink.VisitedLinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(61)))), ((int)(((byte)(116)))), ((int)(((byte)(255)))));
-            this.discordLink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.discordLink_LinkClicked);
             // 
             // labelPulseCLR
             // 
@@ -214,7 +199,7 @@
             this.logoBox.Image = global::N2D2.Properties.Resources.N2D_ICON;
             this.logoBox.Location = new System.Drawing.Point(12, 282);
             this.logoBox.Name = "logoBox";
-            this.logoBox.Size = new System.Drawing.Size(75, 79);
+            this.logoBox.Size = new System.Drawing.Size(52, 79);
             this.logoBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.logoBox.TabIndex = 4;
             this.logoBox.TabStop = false;
@@ -246,6 +231,7 @@
             this.exitBtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(16)))), ((int)(((byte)(16)))));
             this.exitBtn.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
             this.exitBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exitBtn.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.exitBtn.Location = new System.Drawing.Point(445, 282);
             this.exitBtn.Name = "exitBtn";
             this.exitBtn.Size = new System.Drawing.Size(63, 31);
@@ -284,7 +270,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(32)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(666, 388);
             this.Controls.Add(this.exitBtn);
-            this.Controls.Add(this.discordLink);
             this.Controls.Add(this.helpBtn);
             this.Controls.Add(this.debugTitle);
             this.Controls.Add(this.debugBorder);
@@ -330,7 +315,6 @@
         private System.Windows.Forms.Panel debugBorder;
         private System.Windows.Forms.Label debugTitle;
         private System.Windows.Forms.Button helpBtn;
-        private System.Windows.Forms.LinkLabel discordLink;
         private Bunifu.Framework.UI.BunifuColorTransition labelPulseCLR;
         private System.Windows.Forms.Timer labelPulser;
         private System.Windows.Forms.Button exitBtn;
