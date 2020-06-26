@@ -5,7 +5,7 @@
 
 <h4> N2D is essentially a wrapper for esptool.py and runs natively on Windows 10. All you have to do is run the software and let the magic happen before your eyes.</h4>
 
-> Custom Image Files - If you need to flash an alternative image, that isn't the default for NodeMCU's and D1 Minis try this edition of Node2Deauther: <a href="https://github.com/mrvodka007/n2dx/">  n2dX - Github </a>
+> If you are looking for a tool to install Deauther v3, check out <a href="https://github.com/mrvodka007/nubimage/"> NubImage </a>
 
 <h6> Check it out: </h6>
 
