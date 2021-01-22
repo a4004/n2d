@@ -1,9 +1,0 @@
-C:\Users\Alex\Documents\AV-Excluded\Projects\N2D\N2D\bin\Debug\N2D.exe.config
-C:\Users\Alex\Documents\AV-Excluded\Projects\N2D\N2D\bin\Debug\N2D.exe
-C:\Users\Alex\Documents\AV-Excluded\Projects\N2D\N2D\bin\Debug\N2D.pdb
-C:\Users\Alex\Documents\AV-Excluded\Projects\N2D\N2D\obj\Debug\N2D.MainWindow.resources
-C:\Users\Alex\Documents\AV-Excluded\Projects\N2D\N2D\obj\Debug\N2D.Properties.Resources.resources
-C:\Users\Alex\Documents\AV-Excluded\Projects\N2D\N2D\obj\Debug\N2D.csproj.GenerateResource.cache
-C:\Users\Alex\Documents\AV-Excluded\Projects\N2D\N2D\obj\Debug\N2D.csproj.CoreCompileInputs.cache
-C:\Users\Alex\Documents\AV-Excluded\Projects\N2D\N2D\obj\Debug\N2D.exe
-C:\Users\Alex\Documents\AV-Excluded\Projects\N2D\N2D\obj\Debug\N2D.pdb
