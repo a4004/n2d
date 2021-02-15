@@ -13,12 +13,14 @@
 <h3> 
   An easy to use ESP8266 flash GUI powered by the official esptool.py software. 
 </h3>
-
-> If you have been watching this repository for a while, you'll now that I've been debating on whether or not to maintain this project.
-> In early January I've decided to revive this repository rather than proceeding with retiring it completely and just towards the end (as you know)
-> I've suspended development simply due to me having a garbage machine - which I still do - I have now reset the project and will proceed to start development from
-> next week, hopefully releasing the first 2021 version by March. Now I have to mention that it will not be the "final" or desired product that I or 
-> you may want; however, small incremental updates will allow me to improve the application and perfect things - rather than throwing some code together
-> and hoping it will work. Once I am satisfied with the application, I will probably leave it "as is".
-
-Thank you for your continued support.
+<hr>
+<h2>
+  Latest Build Updates
+</h2>
+<p>
+  Stage 1 of development has been almost completed in just under 24 hours of resetting development. I've gone for a <i>hackerman</i> kind of theme for the application with   the     gray-blue and "Dark Carribean Green" colour scheme. Stage 2 will involve implementing the code-behind of the controls and creating a functioning, though probably brokem           program. Stage 3 will just be heavy debugging and code refactoring to find and rectify any bugs and improve code readbility. Finally, Stage 4 involves me and a select others       testing the application for stability and functionality. Should any issues be discovered there will be delays in release.
+</p>
+<p>
+  For those really wanting a release date, although not guaranteed in any way, I will estimate that will be around March 8th if no delays are encountered.
+</p>
+<img src="https://raw.githubusercontent.com/realmrvodka/n2d/master/github/teaser_ss.png"/>
