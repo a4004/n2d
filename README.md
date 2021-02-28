@@ -2,9 +2,9 @@
   <img src="https://raw.githubusercontent.com/realmrvodka/n2d/master/github/n2d.png"/>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/development-in_progress-08C573"/>
-  <img src="https://img.shields.io/badge/build_-passing-08C573"/>
-  <img src="https://img.shields.io/badge/stage-3_of_4-08A2EB"/>
+  <img src="https://img.shields.io/badge/development-delayed-FFAA00"/>
+  <img src="https://img.shields.io/badge/build_-unstable-FF264B"/>
+  <img src="https://img.shields.io/badge/stage-3_of_4-000000"/>
   &nbsp;
   <img src="https://img.shields.io/static/v1?label=realmrvodka&message=n2d&color=blue&logo=github" href="https://github.com/realmrvodka/n2d"/>
   <img src="https://img.shields.io/github/stars/realmrvodka/n2d?style=socialb" href="https://github.com/realmrvodka/n2d"/>
@@ -15,13 +15,10 @@
 </h3>
 <hr>
 <h2>
-  Latest Build Updates
+  28/02/21 | Build Update
 </h2>
 <p>
-  Stage 3 of development has just started (25/02/21) which means the program is a working prototype however it isn't stable for normal use. Last minute GUI changes might 
-  happen should I feel it's necessary. As for release, due to global pandemic circumstances and the upcoming easing of restrictions in the United Kingdom, development
-  will be prolonged which likely means a delayed release date if Stage 4 is to commence normally but I'll probably end up releasing an RC edition for public testing.
+  The project GUI has been revamped (inspired by Balena Etcher) and many issues have been fixed, though as it is a rewrite, full functionality has not yet been re-implemented 
+  and will be done over the next week. The official release date has been pushed back to the 15th of March to allow time for quality control and eradication of bugs. If you're
+  interested in obtaining alpha copies of the program, contact me on Discord @realmrvodka#4269 or via a Matrix-compatible IM client at mrvodka@matrix.org.
 </p>
-<h4>
-  Thank you for your continued support. <3
-</h4>
