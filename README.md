@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/realmrvodka/n2d/master/github/n2d.png"/>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/development-crunched-F2FA0B"/>
+  <img src="https://img.shields.io/badge/development-continuing-F2FA0B"/>
   <img src="https://img.shields.io/badge/build_-passing-1DEDC9"/>
   <img src="https://img.shields.io/badge/stage-4_of_4-1E90FF"/>
   &nbsp;
