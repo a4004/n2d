@@ -19,6 +19,6 @@
 
 <p>
   It's been a long journey, but N2D is finally out for public testing and use. Get it <a href="https://github.com/realmrvodka/n2d/releases">here.</a>
-  For assistance in using the program, see our Wiki <a href="https://github.com/realmrvodka/n2d/Wiki">here.</a>
+  For assistance in using the program, see our Wiki <a href="https://github.com/realmrvodka/n2d/wiki">here.</a>
 </p>
 
