@@ -32,7 +32,6 @@ namespace N2D.AppCore.UX.Pages
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PageDone));
             this.lbmsg = new System.Windows.Forms.Label();
             this.lbcaption = new System.Windows.Forms.Label();
-            this.lbnote = new System.Windows.Forms.Label();
             this.eBtnExit = new N2D.AppCore.UX.ExtendedButton();
             this.SuspendLayout();
             // 
@@ -59,18 +58,6 @@ namespace N2D.AppCore.UX.Pages
             this.lbcaption.TabIndex = 9;
             this.lbcaption.Text = "Your device was flashed successfully.";
             this.lbcaption.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lbnote
-            // 
-            this.lbnote.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbnote.AutoEllipsis = true;
-            this.lbnote.Font = new System.Drawing.Font("Segoe UI", 7F);
-            this.lbnote.ForeColor = System.Drawing.Color.Silver;
-            this.lbnote.Location = new System.Drawing.Point(32, 276);
-            this.lbnote.Name = "lbnote";
-            this.lbnote.Size = new System.Drawing.Size(577, 28);
-            this.lbnote.TabIndex = 10;
-            this.lbnote.Text = resources.GetString("lbnote.Text");
             // 
             // eBtnExit
             // 
@@ -114,7 +101,6 @@ namespace N2D.AppCore.UX.Pages
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(54)))), ((int)(((byte)(56)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(648, 323);
-            this.Controls.Add(this.lbnote);
             this.Controls.Add(this.lbcaption);
             this.Controls.Add(this.lbmsg);
             this.Controls.Add(this.eBtnExit);
@@ -133,8 +119,7 @@ namespace N2D.AppCore.UX.Pages
         #endregion
 
         private ExtendedButton eBtnExit;
-        private System.Windows.Forms.Label lbmsg;
-        private System.Windows.Forms.Label lbcaption;
-        private System.Windows.Forms.Label lbnote;
+        public System.Windows.Forms.Label lbmsg;
+        public System.Windows.Forms.Label lbcaption;
     }
 }

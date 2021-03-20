@@ -27,7 +27,7 @@ namespace N2D.AppCore.UX.Pages
 
                 if(ofd.ShowDialog() is DialogResult.OK)
                 {
-                    RuntimeVariables.ImageProperties.Location = ofd.FileName;
+                    RuntimeVariables.ImageProperties.Location = $"\"{ofd.FileName}\"";
                     RuntimeVariables.ImageProperties.Filename = Path.GetFileName(ofd.FileName);
                     RuntimeVariables.ImageProperties.IsOfficial = false;
                     RuntimeVariables.ImageProperties.IsRemoteResource = false;

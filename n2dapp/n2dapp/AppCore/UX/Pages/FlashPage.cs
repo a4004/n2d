@@ -103,9 +103,21 @@ namespace N2D.AppCore.UX.Pages
                 proc.BeginOutputReadLine();
                 proc.WaitForExit();
 
-                Invoke(new Action(() => System.IO.File.WriteAllText("n2d.log", rtbOut.Text)));
+                if (proc.ExitCode is 0)
+                    MainWindow.Instance.LoadPage<PageDone>(new PageDone());
+                else
+                {
+                    PageDone pageDone = new PageDone();
+                    pageDone.lbmsg.Text = "Something went wrong.";
+                    pageDone.lbcaption.Text = "The flash operation failed.";
 
-                MainWindow.Instance.LoadPage<PageDone>(new PageDone());
+                    Invoke(new Action(delegate ()
+                    {
+                        System.IO.File.WriteAllText("n2d.log", rtbOut.Text);
+                    }));
+
+                    MainWindow.Instance.LoadPage<PageDone>(pageDone);
+                }
             });
         }
 
