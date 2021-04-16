@@ -11,12 +11,21 @@ namespace N2D.AppCore.Main
         public static string[] Devices { get => GetDeviceNames(Ports); }
         private static string GetDeviceName(string ComPort)
         {
-            return new ManagementObjectSearcher("Select * from Win32_SerialPort")
-                .Get().OfType<ManagementObject>()
-                .Where(o => ComPort.Equals(o["DeviceID"]))
-                .First().Properties.OfType<PropertyData>()
-                .Where(t => t.Name.Equals("Description"))
-                .First().Value as string;
+            try
+            {
+                string result = new ManagementObjectSearcher("Select * from Win32_SerialPort")
+                    .Get().OfType<ManagementObject>()
+                    .Where(o => ComPort.Equals(o["DeviceID"]))
+                    .First().Properties.OfType<PropertyData>()
+                    .Where(t => t.Name.Equals("Description"))
+                    .First().Value as string;
+
+                return result;
+            }
+            catch
+            {
+                return $"Unknown Device on {ComPort}"; 
+            }
         }
         public static string[] GetDeviceNames(string[] ComPorts)
         {
