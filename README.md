@@ -13,11 +13,10 @@
   An easy to use ESP8266 flash GUI powered by the official esptool.py software. 
 </h3>
 <hr>
-<h3> N2D 2021.3.3 | Release </h3>
-<img src="https://raw.githubusercontent.com/realmrvodka/n2d/master/github/n2d-main.png"/>
-
 <p>
   Get the latest version <a href="https://github.com/realmrvodka/n2d/releases">here.</a>
   Our <a href="https://github.com/realmrvodka/n2d/wiki">Wiki</a> is useful for troubleshooting and program help.
 </p>
+<img src="https://raw.githubusercontent.com/realmrvodka/n2d/master/github/n2d-main.png"/>
+
 
