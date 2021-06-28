@@ -2,12 +2,10 @@
   <img src="https://raw.githubusercontent.com/realmrvodka/n2d/master/github/n2d.png"/>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/development-inactive-000000"/>
-  <img src="https://img.shields.io/badge/build_-passed-1DFEC9"/>
+  <img src="https://img.shields.io/static/v1?label=development&message=inactive&color=black&style=flat-square"/>
+  <img src="https://img.shields.io/static/v1?label=build&message=passed&color=cyan&style=flat-square"/>
   &nbsp;
-  <img src="https://img.shields.io/static/v1?label=realmrvodka&message=n2d&color=blue&logo=github" href="https://github.com/realmrvodka/n2d"/>
-  <img src="https://img.shields.io/github/stars/realmrvodka/n2d?style=socialb" href="https://github.com/realmrvodka/n2d"/>
-  <img src="https://img.shields.io/github/forks/realmrvodka/n2d?style=social" href="https://github.com/realmrvodka/n2d"/>
+  <img src="https://img.shields.io/static/v1?label=realmrvodka&message=n2d&color=blue&logo=github&style=flat-square" href="https://github.com/realmrvodka/n2d"/>
 </p>
 <h3> 
   An easy to use ESP8266 flash GUI powered by the official esptool.py software. 
