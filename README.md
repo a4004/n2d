@@ -12,7 +12,7 @@
 </h3>
 <hr>
 <p>
-  Get the latest version <a href="https://github.com/pseudo8086/2d/releases">here.</a>
+  Get the latest version <a href="https://github.com/pseudo8086/n2d/releases">here.</a>
   Our <a href="https://github.com/pseudo8086/n2d/wiki">Wiki</a> is useful for troubleshooting and program help.
 </p>
 <img src="https://raw.githubusercontent.com/pseudo8086/n2d/master/github/n2d-main.png"/>
