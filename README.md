@@ -2,8 +2,8 @@
   <img src="https://raw.githubusercontent.com/realmrvodka/n2d/master/github/n2d.png"/>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/static/v1?label=development&message=inactive&color=black&style=flat-square"/>
-  <img src="https://img.shields.io/static/v1?label=build&message=passed&color=cyan&style=flat-square"/>
+  <img src="https://img.shields.io/static/v1?label=development&message=restarted&color=darkgreen&style=flat-square"/>
+  <img src="https://img.shields.io/static/v1?label=build&message=passing&color=limegreen&style=flat-square"/>
   &nbsp;
   <img src="https://img.shields.io/static/v1?label=pseudo8086&message=n2d&color=blue&logo=github&style=flat-square" href="https://github.com/realmrvodka/n2d"/>
 </p>
