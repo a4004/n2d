@@ -1,23 +1,23 @@
-  <p align="center">
-    <img height=128 width=auto src="./github/icon.png"/>
-  </p>
-  <h3 align="center">
-    Espressif Flash Manager (N2D22)
-  </h3>
-  <p align="center">
-    <img src="https://img.shields.io/static/v1?label=Build&message=Passing&color=limegreen&style=flat-square&logo=visualstudio"/>
-    <img src="https://img.shields.io/static/v1?label=Update&message=RC1&color=orange&style=flat-square"/>
-    <img src="https://img.shields.io/static/v1?label=Last%20Update&message=18th%20Sept%202021&color=dodgerblue&style=flat-square"/>
-    <br>
-    <img src="https://img.shields.io/github/watchers/pseudo8086/n2d?label=Watchers&style=flat-square&logo=github">
-    <img src="https://img.shields.io/github/stars/pseudo8086/n2d?label=Stars&style=flat-square&logo=github">
-    <img src="https://img.shields.io/github/forks/pseudo8086/n2d?label=Forks&style=flat-square&logo=github">
-  </p>
+<p align="center">
+  <img alt="Logo" height=128 width=auto src="./github/icon.png"/>
+</p>
+<h3 align="center">
+  Espressif Flash Manager (N2D22)
+</h3>
+<p align="center">
+  <img alt="Build Passing" src="https://img.shields.io/static/v1?label=Build&message=Passing&color=limegreen&style=flat-square&logo=visualstudio"/>
+  <img alt="Latest RC1" src="https://img.shields.io/static/v1?label=Latest&message=RC1&color=orange&style=flat-square"/>
+  <img alt="Last Update" src="https://img.shields.io/static/v1?label=Last%20Update&message=18th%20Sept%202021&color=dodgerblue&style=flat-square"/>
+  <br>
+  <img alt="Watchers" src="https://img.shields.io/github/watchers/pseudo8086/n2d?label=Watchers&style=flat-square&logo=github">
+  <img alt="Stars" src="https://img.shields.io/github/stars/pseudo8086/n2d?label=Stars&style=flat-square&logo=github">
+  <img alt="Forks" src="https://img.shields.io/github/forks/pseudo8086/n2d?label=Forks&style=flat-square&logo=github">
+</p>
 
 ## Getting Started
 For a full guide on the tool, see the [Wiki](https://github.com/pseudo8086/n2d/wiki). You can download the latest release [here](https://github.com/pseudo8086/n2d/releases).
 
-<img height=360 width=auto src="./github/n2d-main.png"/>
+<img alt="N2D22 Main Window" height=360 width=auto src="./github/n2d-main.png"/>
 
 
 ## The Final Journey
