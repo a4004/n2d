@@ -15,7 +15,7 @@
 </p>
 
 ## Getting Started
-For a full guide on the tool, see the [Wiki](https://github.com/pseudo8086/n2d/wiki). You can download the latest release [here](https://github.com/pseudo8086/n2d/releases).
+For a full guide on the tool, see the [Wiki](https://github.com/pseudo8086/n2d/wiki). You can download the latest release [here](https://github.com/pseudo8086/n2d/releases/latest).
 
 <img alt="N2D22 Main Window" height=360 width=auto src="./github/n2d-main.png"/>
 
