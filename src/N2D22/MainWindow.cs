@@ -191,15 +191,17 @@ FileMode:
                     WaitFm.Caption("Checking device connection");
                     WaitFm.Debug("Checking device connection...");
 
-                    WaitFm.Debug($"Connecting to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}...");
+                    if (!Program.Settings.PortFix)
+                        WaitFm.Debug($"Connecting to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}...");
 
                     string output = string.Empty;
 
                     if (!Program.Portable)
                     {
-                        if (ShellManager.RunCommand(out output, "py", $"-m esptool --port {Program.Settings.SelectedPort} read_mac"))
+                        if (ShellManager.RunCommand(out output, "py", $"-m esptool {(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} read_mac"))
                         {
-                            WaitFm.Debug($"Connected to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}", Event.Success);
+                            if (!Program.Settings.PortFix)
+                                WaitFm.Debug($"Connected to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}", Event.Success);
                             WaitFm.Debug($"Espressif device MAC: {output.Substring(output.IndexOf("MAC:") + 5, 17).ToUpper()}", Event.Success);
 
                             WaitFm.Caption("Connection was successful");
@@ -209,9 +211,10 @@ FileMode:
                     }
                     else
                     {
-                        if (ShellManager.RunCommand(out output, Program.Settings.EsptoolExe, $"--port {Program.Settings.SelectedPort} read_mac"))
+                        if (ShellManager.RunCommand(out output, Program.Settings.EsptoolExe, $"{(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} read_mac"))
                         {
-                            WaitFm.Debug($"Connected to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}", Event.Success);
+                            if (!Program.Settings.PortFix)
+                                WaitFm.Debug($"Connected to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}", Event.Success);
                             WaitFm.Debug($"Espressif device MAC: {output.Substring(output.IndexOf("MAC:") + 5, 17).ToUpper()}", Event.Success);
 
                             WaitFm.Caption("Connection was successful");
@@ -225,7 +228,7 @@ FileMode:
 
                     if (!Program.Portable)
                     {
-                        if (ShellManager.RunCommand(out output, "py", $"-m esptool --port {Program.Settings.SelectedPort} erase_flash"))
+                        if (ShellManager.RunCommand(out output, "py", $"-m esptool {(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} erase_flash"))
                         {
                             WaitFm.Debug("Erase successful!", Event.Success);
                             WaitFm.Caption("Erased.");
@@ -235,7 +238,7 @@ FileMode:
                     }
                     else
                     {
-                        if (ShellManager.RunCommand(out output, Program.Settings.EsptoolExe, $"--port {Program.Settings.SelectedPort} erase_flash"))
+                        if (ShellManager.RunCommand(out output, Program.Settings.EsptoolExe, $"{(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} erase_flash"))
                         {
                             WaitFm.Debug("Erase successful!", Event.Success);
                             WaitFm.Caption("Erased.");
@@ -249,7 +252,7 @@ FileMode:
 
                     if (!Program.Portable)
                     {
-                        if (ShellManager.RunCommand(out output, "py", $"-m esptool --port {Program.Settings.SelectedPort} write_flash 0x0 \"{Program.Settings.Bin}\""))
+                        if (ShellManager.RunCommand(out output, "py", $"-m esptool {(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} write_flash 0x0 \"{Program.Settings.Bin}\""))
                         {
                             WaitFm.Debug("Flash complete!", Event.Success);
                             WaitFm.Caption("Installed.");
@@ -259,7 +262,7 @@ FileMode:
                     }
                     else
                     {
-                        if (ShellManager.RunCommand(out output, Program.Settings.EsptoolExe, $"--port {Program.Settings.SelectedPort} write_flash 0x0 \"{Program.Settings.Bin}\""))
+                        if (ShellManager.RunCommand(out output, Program.Settings.EsptoolExe, $"{(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} write_flash 0x0 \"{Program.Settings.Bin}\""))
                         {
                             WaitFm.Debug("Erase successful!", Event.Success);
                             WaitFm.Caption("Erased.");
@@ -327,14 +330,19 @@ Rescan:
                 Program.Settings.SelectedName = SerialBusManager.SerialDevices[threshold - 1];
 
                 WaitFm.Title("Connecting to your device");
-                WaitFm.Caption($"Connecting to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}");
-                WaitFm.Debug($"Connecting to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}...");
+
+                if (!Program.Settings.PortFix)
+                    WaitFm.Caption($"Connecting to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}");
+                if (!Program.Settings.PortFix)
+                    WaitFm.Debug($"Connecting to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}...");
 
                 if (!Program.Portable)
                 {
-                    if (ShellManager.RunCommand(out string output, "py", $"-m esptool --port {Program.Settings.SelectedPort} read_mac"))
+                    if (ShellManager.RunCommand(out string output, "py", $"-m esptool {(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} read_mac"))
                     {
-                        WaitFm.Debug($"Connected to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}", Event.Success);
+                        if (!Program.Settings.PortFix)
+                            WaitFm.Debug($"Connected to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}", Event.Success);
+
                         WaitFm.Debug($"Espressif device MAC: {output.Substring(output.IndexOf("MAC:") + 5, 17).ToUpper()}", Event.Success);
                         WaitFm.Caption("The device is working correctly");
                         WaitFm.Title($"Connected to {Program.Settings.SelectedName}");
@@ -371,9 +379,10 @@ Rescan:
                 }
                 else
                 {
-                    if (ShellManager.RunCommand(out string output, Program.Settings.EsptoolExe, $"--port {Program.Settings.SelectedPort} read_mac"))
+                    if (ShellManager.RunCommand(out string output, Program.Settings.EsptoolExe, $"{(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} read_mac"))
                     {
-                        WaitFm.Debug($"Connected to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}", Event.Success);
+                        if (!Program.Settings.PortFix)
+                            WaitFm.Debug($"Connected to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}", Event.Success);
                         WaitFm.Debug($"Espressif device MAC: {output.Substring(output.IndexOf("MAC:") + 5, 17).ToUpper()}", Event.Success);
                         WaitFm.Caption("The device is working correctly");
                         WaitFm.Title($"Connected to {Program.Settings.SelectedName}");
@@ -610,14 +619,36 @@ InitTaskEnd:
             WindowManager.UnmountWindow(Controls, TaskManager.ForegroundWindow);
             TaskManager.ReleaseFLock();
 
-            Invoke(new Action(() =>
+            if (Program.Settings.PortFix)
             {
-                CreateForegroundTask("devicescan", new Task(Search), "Searching for your device", "You should connect your device now");
-            }));
+                Invoke(new Action(() =>
+                {
+                    mitigationNotice.Show();
+                    CreateForegroundTask("devicescan-patch", new Task(delegate() { }), "", "Please connect your device to this PC. When you've confirmed it's connected, click Continue.");
+                }));
+            }
+            else
+            {
+                Invoke(new Action(() =>
+                {
+                    CreateForegroundTask("devicescan", new Task(Search), "Searching for your device", "You should connect your device now");
+                }));
+            }
         }
         private void MainWindow_Load(object sender, EventArgs e)
         {
             CreateForegroundTask("setup", new Task(Init), "Getting ready", "");
+        }
+
+        private void btnConnect_Click(object sender, EventArgs e)
+        {
+            mitigationNotice.Hide();
+
+            WaitFm.Host.CloseTask();
+            WindowManager.UnmountWindow(Controls, TaskManager.ForegroundWindow);
+            TaskManager.ReleaseFLock();
+
+            CreateForegroundTask("flasher", new Task(Flash), "Getting ready", "");
         }
     }
 }

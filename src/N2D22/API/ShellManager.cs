@@ -143,7 +143,8 @@ namespace N2D22.API
                 UseShellExecute = false,
                 CreateNoWindow = true,
                 WindowStyle = ProcessWindowStyle.Hidden,
-                RedirectStandardOutput = true
+                RedirectStandardOutput = true,
+                RedirectStandardError = true
             };
 
             Program.Debug("shellmgr", $"Running command \"{process}{(arguments == null ? "" : " " + arguments)}\"");
@@ -167,6 +168,9 @@ namespace N2D22.API
                 cmd.WaitForExit(1800);
 
                 output = cmd.StandardOutput.ReadToEnd().Replace("\r", "").Replace("\n", "");
+                string error = cmd.StandardError.ReadToEnd().Replace("\r", "").Replace("\n", "");
+
+                Program.Debug("shellmgr", $"{process} stderr: {error}", Event.Critical);
 
                 if (!cmd.HasExited)
                     return ExitProcess(cmd) == 0;
@@ -177,7 +181,6 @@ namespace N2D22.API
             {
                 Program.Debug("shellmgr", $"An error was encountered. {ex.Message}", Event.Critical);
                 output = ex.Message;
-
                 return false;
             }
         }

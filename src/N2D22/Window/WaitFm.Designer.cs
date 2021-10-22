@@ -62,7 +62,7 @@ namespace N2D22.Window
             this.taskCaption.Location = new System.Drawing.Point(15, 52);
             this.taskCaption.Name = "taskCaption";
             this.taskCaption.Padding = new System.Windows.Forms.Padding(3, 0, 8, 0);
-            this.taskCaption.Size = new System.Drawing.Size(570, 21);
+            this.taskCaption.Size = new System.Drawing.Size(570, 43);
             this.taskCaption.TabIndex = 1;
             this.taskCaption.Text = "This won\'t take long";
             // 
@@ -87,10 +87,10 @@ namespace N2D22.Window
             this.detailView.BackColor = System.Drawing.SystemColors.Window;
             this.detailView.Controls.Add(this.debugOutput);
             this.detailView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.detailView.Location = new System.Drawing.Point(15, 73);
+            this.detailView.Location = new System.Drawing.Point(15, 95);
             this.detailView.Name = "detailView";
             this.detailView.Padding = new System.Windows.Forms.Padding(5, 15, 5, 0);
-            this.detailView.Size = new System.Drawing.Size(570, 270);
+            this.detailView.Size = new System.Drawing.Size(570, 248);
             this.detailView.TabIndex = 3;
             this.detailView.Visible = false;
             // 
@@ -103,7 +103,7 @@ namespace N2D22.Window
             this.debugOutput.ItemHeight = 15;
             this.debugOutput.Location = new System.Drawing.Point(5, 15);
             this.debugOutput.Name = "debugOutput";
-            this.debugOutput.Size = new System.Drawing.Size(560, 255);
+            this.debugOutput.Size = new System.Drawing.Size(560, 233);
             this.debugOutput.TabIndex = 0;
             // 
             // header

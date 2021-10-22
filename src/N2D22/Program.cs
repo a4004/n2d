@@ -40,6 +40,7 @@ namespace N2D22
             public static string SelectedName;
 
             public static string EsptoolExe;
+            public static bool PortFix;
         }
 
         private static void AdjustColor(Event newColor)
@@ -130,6 +131,14 @@ namespace N2D22
 
             AllowFileDebugging = -1;
             Debug("Application init.");
+
+            if (argv.Any(o => o.Contains("--fixdriver") || o.Contains("-fd")))
+            {
+                Debug("Program executed with --fixdriver flag. Device picker will be disabled and esptool will autodetect" +
+                    " in order to mitigate access denied error messages.");
+
+                Settings.PortFix = true;
+            }
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
