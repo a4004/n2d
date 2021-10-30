@@ -1,0 +1,95 @@
+[ 30/10/2021 11:37:26]	Application init.
+[ 30/10/2021 11:37:26]	Creating MainWindow
+[ 30/10/2021 11:37:26]	taskmanager: Started setup.
+[ 30/10/2021 11:37:26]	windowmgr: Mounted window WaitFm into MainWindow
+[ 30/10/2021 11:37:27]	shellmgr: Running command "py --version"
+[ 30/10/2021 11:37:27]	shellmgr: The system reports no errors at the moment. Attempting to close the process.
+[ 30/10/2021 11:37:27]	shellmgr: Waiting for py (pid 16056) to exit. [1 of 3]
+[ 30/10/2021 11:37:27]	shellmgr: Waiting for py (pid 16056) to exit. [2 of 3]
+[ 30/10/2021 11:37:27]	shellmgr: py has exited. Exit code: 0.
+[ 30/10/2021 11:37:27]	shellmgr: Running command "py -c "import sys; print(sys.executable)""
+[ 30/10/2021 11:37:27]	shellmgr: The system reports no errors at the moment.
+[ 30/10/2021 11:37:27]	shellmgr: [INFO] The process (pid 6960) is running as a task and is limited to a runtime of 1800 seconds.
+[ 30/10/2021 11:37:27]	shellmgr: py stderr: 
+[ 30/10/2021 11:37:27]	setup: [ 1.19697]	Python is installed on this PC at "C:\Program Files\Python39\python.exe".
+[ 30/10/2021 11:37:28]	shellmgr: Running command "py -m esptool --help"
+[ 30/10/2021 11:37:28]	shellmgr: The system reports no errors at the moment. Attempting to close the process.
+[ 30/10/2021 11:37:28]	shellmgr: Waiting for py (pid 15856) to exit. [1 of 3]
+[ 30/10/2021 11:37:28]	shellmgr: Waiting for py (pid 15856) to exit. [2 of 3]
+[ 30/10/2021 11:37:28]	shellmgr: py has exited. Exit code: 0.
+[ 30/10/2021 11:37:28]	setup: [ 2.30616]	esptool.py is installed in the default Python environment.
+[ 30/10/2021 11:37:29]	setup: [ 3.31395]	Searching for device drivers.
+[ 30/10/2021 11:37:30]	setup: [ 4.32876]	Check "C:\Windows\system32\DriverStore\FileRepository\" for "silabser"
+[ 30/10/2021 11:37:30]	setup: [ 4.32976]	Check "C:\Windows\system32\DriverStore\FileRepository\" for "ch34ser"
+[ 30/10/2021 11:37:30]	setup: [ 4.33076]	Check "C:\Windows\system32\DriverStore\FileRepository\" for "ftdiport"
+[ 30/10/2021 11:37:30]	setup: [ 4.33076]	Check "C:\Windows\system32\DriverStore\FileRepository\" for "ftdibus"
+[ 30/10/2021 11:37:30]	setup: [ 4.33076]	Detected driver: SILABSER
+[ 30/10/2021 11:37:30]	windowmgr: Mounted window MessageFm into MainWindow
+[ 30/10/2021 11:37:35]	windowmgr: Request to unmount MessageFm into MainWindow requires control invokation.
+[ 30/10/2021 11:37:35]	windowmgr: Invoking the request on the UI thread.
+[ 30/10/2021 11:37:35]	windowmgr: Removing window MessageFm from MainWindow
+[ 30/10/2021 11:37:36]	setup: [ 10.39567]	Finished (10s).
+[ 30/10/2021 11:37:36]	taskmanager: setup finished in 10s.
+[ 30/10/2021 11:37:36]	windowmgr: Request to unmount WaitFm into MainWindow requires control invokation.
+[ 30/10/2021 11:37:36]	windowmgr: Invoking the request on the UI thread.
+[ 30/10/2021 11:37:36]	windowmgr: Removing window WaitFm from MainWindow
+[ 30/10/2021 11:37:36]	taskmanager: Started devicescan.
+[ 30/10/2021 11:37:36]	windowmgr: Mounted window WaitFm into MainWindow
+[ 30/10/2021 11:37:37]	devicescan: [ 1.01626]	Searching for devices...
+[ 30/10/2021 11:37:37]	devicescan: [ 1.24657]	Detected Communications Port on COM1
+[ 30/10/2021 11:37:38]	windowmgr: Mounted window RequestFm into MainWindow
+[ 30/10/2021 11:37:40]	windowmgr: Request to unmount RequestFm into MainWindow requires control invokation.
+[ 30/10/2021 11:37:40]	windowmgr: Invoking the request on the UI thread.
+[ 30/10/2021 11:37:40]	windowmgr: Removing window RequestFm from MainWindow
+[ 30/10/2021 11:37:40]	devicescan: [ 4.15706]	The device was rejected by the user, device threshold is now 2 (was 1)
+[ 30/10/2021 11:37:41]	devicescan: [ 4.36474]	Detected Silicon Labs CP210x USB to UART Bridge on COM5
+[ 30/10/2021 11:37:41]	windowmgr: Mounted window RequestFm into MainWindow
+[ 30/10/2021 11:37:42]	windowmgr: Request to unmount RequestFm into MainWindow requires control invokation.
+[ 30/10/2021 11:37:42]	windowmgr: Invoking the request on the UI thread.
+[ 30/10/2021 11:37:42]	windowmgr: Removing window RequestFm from MainWindow
+[ 30/10/2021 11:37:42]	devicescan: [ 5.68543]	Connecting to Silicon Labs CP210x USB to UART Bridge on COM5...
+[ 30/10/2021 11:37:42]	shellmgr: Running command "py -m esptool --port COM5 read_mac"
+[ 30/10/2021 11:37:42]	shellmgr: The system reports no errors at the moment.
+[ 30/10/2021 11:37:42]	shellmgr: [INFO] The process (pid 19840) is running as a task and is limited to a runtime of 1800 seconds.
+[ 30/10/2021 11:37:45]	shellmgr: py stderr: 
+[ 30/10/2021 11:37:45]	devicescan: [ 8.89674]	Connected to Silicon Labs CP210x USB to UART Bridge on COM5
+[ 30/10/2021 11:37:45]	devicescan: [ 8.89674]	Espressif device MAC: DC:4F:22:5F:3B:B4
+[ 30/10/2021 11:37:46]	devicescan: [ 9.90797]	Finished (10s).
+[ 30/10/2021 11:37:46]	taskmanager: devicescan finished in 10s.
+[ 30/10/2021 11:37:46]	windowmgr: Request to unmount WaitFm into MainWindow requires control invokation.
+[ 30/10/2021 11:37:46]	windowmgr: Invoking the request on the UI thread.
+[ 30/10/2021 11:37:46]	windowmgr: Removing window WaitFm from MainWindow
+[ 30/10/2021 11:37:46]	taskmanager: Started flasher.
+[ 30/10/2021 11:37:46]	windowmgr: Mounted window WaitFm into MainWindow
+[ 30/10/2021 11:37:47]	windowmgr: Mounted window RequestFm into MainWindow
+[ 30/10/2021 11:37:48]	windowmgr: Request to unmount RequestFm into MainWindow requires control invokation.
+[ 30/10/2021 11:37:48]	windowmgr: Invoking the request on the UI thread.
+[ 30/10/2021 11:37:48]	windowmgr: Removing window RequestFm from MainWindow
+[ 30/10/2021 11:37:49]	github: Request https://api.github.com/repos/spacehuhntech/esp8266_deauther/tags
+[ 30/10/2021 11:37:49]	github: Headers
+	Accept: application/json
+	User-Agent: N2D22webAPI/Microsoft Windows NT 6.2.9200.0
+	
+[ 30/10/2021 11:37:49]	github: Status Code OK (200)
+[ 30/10/2021 11:37:49]	github: Request https://api.github.com/repos/spacehuhntech/esp8266_deauther/releases/latest
+[ 30/10/2021 11:37:49]	github: Headers
+	Accept: application/json
+	User-Agent: N2D22webAPI/Microsoft Windows NT 6.2.9200.0
+	
+[ 30/10/2021 11:37:49]	github: Status Code OK (200)
+[ 30/10/2021 11:37:49]	github: Latest software version: 2.6.1
+[ 30/10/2021 11:37:49]	github: Request https://api.github.com/repos/spacehuhntech/esp8266_deauther/releases/tags/2.6.1
+[ 30/10/2021 11:37:49]	github: Headers
+	Accept: application/json
+	User-Agent: N2D22webAPI/Microsoft Windows NT 6.2.9200.0
+	
+[ 30/10/2021 11:37:49]	github: Status Code OK (200)
+[ 30/10/2021 11:37:49]	windowmgr: Mounted window SelectFm into MainWindow
+[ 30/10/2021 11:37:53]	github: Request https://api.github.com/repos/spacehuhntech/esp8266_deauther/releases/tags/v1.6-testing
+[ 30/10/2021 11:37:53]	github: Headers
+	Accept: application/json
+	User-Agent: N2D22webAPI/Microsoft Windows NT 6.2.9200.0
+	
+[ 30/10/2021 11:37:53]	github: Status Code NotFound (404)
+[ 30/10/2021 11:37:53]	github: The API request was unsuccessful, raw content: {"message":"Not Found","documentation_url":"https://docs.github.com/rest/reference/repos#get-a-release-by-tag-name"}
+[ 30/10/2021 11:37:57]	Window destroyed. Exiting

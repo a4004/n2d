@@ -17,7 +17,7 @@ namespace N2D22.Window
             if (availableFiles == null || availableFiles.Length < 1)
             {
                 MessageBox.Show("The version you selected does not have any precompiled binaries available for it, to use this version you will" +
-                    "need build the software from source and flash it as a local image from this PC.", "No Files Available", MessageBoxButtons.OK,
+                    " need to build the software from source and flash it as a local image from this PC.", "No Files Available", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
                 return;
             }

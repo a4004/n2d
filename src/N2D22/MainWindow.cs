@@ -166,138 +166,138 @@ FileMode:
 
                 WaitFm.Title("Getting ready");
                 await Task.Delay(1000);
-
-                CreateRequest("Flash Operation", "The program is about to install software to your Espressif device. " +
-                    "Existing data on the device will be PERMANENTLY DELETED, are you sure?", "Allow software installation",
-                    "Cancel flash operation, no changes will be made", out int result);
-
-                if (result == 2)
-                {
-                    WaitFm.Debug("User cancelled the flash operation.", Event.Critical);
-                    await CreateMessage("Software installation aborted", "You've chosen to cancel the installation " +
-                        "of software to your Espressif device. No changes have been made. You can close this window.");
-
-                    WaitFm.Host.CloseTask();
-                    WindowManager.UnmountWindow(Controls, TaskManager.ForegroundWindow);
-                    TaskManager.ReleaseFLock();
-
-                    return;
-                }
-                else if (result == 1)
-                {
-                    WaitFm.Debug("Flash operation started.");
-                    WaitFm.Title("Installing software");
-
-                    WaitFm.Caption("Checking device connection");
-                    WaitFm.Debug("Checking device connection...");
-
-                    if (!Program.Settings.PortFix)
-                        WaitFm.Debug($"Connecting to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}...");
-
-                    string output = string.Empty;
-
-                    if (!Program.Portable)
-                    {
-                        if (ShellManager.RunCommand(out output, "py", $"-m esptool {(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} read_mac"))
-                        {
-                            if (!Program.Settings.PortFix)
-                                WaitFm.Debug($"Connected to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}", Event.Success);
-                            WaitFm.Debug($"Espressif device MAC: {output.Substring(output.IndexOf("MAC:") + 5, 17).ToUpper()}", Event.Success);
-
-                            WaitFm.Caption("Connection was successful");
-                        }
-                        else
-                            throw new Exception("Could not connect to the device.");
-                    }
-                    else
-                    {
-                        if (ShellManager.RunCommand(out output, Program.Settings.EsptoolExe, $"{(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} read_mac"))
-                        {
-                            if (!Program.Settings.PortFix)
-                                WaitFm.Debug($"Connected to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}", Event.Success);
-                            WaitFm.Debug($"Espressif device MAC: {output.Substring(output.IndexOf("MAC:") + 5, 17).ToUpper()}", Event.Success);
-
-                            WaitFm.Caption("Connection was successful");
-                        }
-                        else
-                            throw new Exception("Could not connect to the device.");
-                    }
-                    
-                    WaitFm.Caption("Erasing flash memory");
-                    WaitFm.Debug("Erasing flash memory chip...");
-
-                    if (!Program.Portable)
-                    {
-                        if (ShellManager.RunCommand(out output, "py", $"-m esptool {(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} erase_flash"))
-                        {
-                            WaitFm.Debug("Erase successful!", Event.Success);
-                            WaitFm.Caption("Erased.");
-                        }
-                        else
-                            throw new Exception("Failed to erase the device.");
-                    }
-                    else
-                    {
-                        if (ShellManager.RunCommand(out output, Program.Settings.EsptoolExe, $"{(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} erase_flash"))
-                        {
-                            WaitFm.Debug("Erase successful!", Event.Success);
-                            WaitFm.Caption("Erased.");
-                        }
-                        else
-                            throw new Exception("Failed to erase the device.");
-                    }
-
-                    WaitFm.Caption("Writing new software image");
-                    WaitFm.Debug("Writing new software image...");
-
-                    if (!Program.Portable)
-                    {
-                        if (ShellManager.RunCommand(out output, "py", $"-m esptool {(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} write_flash 0x0 \"{Program.Settings.Bin}\""))
-                        {
-                            WaitFm.Debug("Flash complete!", Event.Success);
-                            WaitFm.Caption("Installed.");
-                        }
-                        else
-                            throw new Exception("Failed to flash the device.");
-                    }
-                    else
-                    {
-                        if (ShellManager.RunCommand(out output, Program.Settings.EsptoolExe, $"{(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} write_flash 0x0 \"{Program.Settings.Bin}\""))
-                        {
-                            WaitFm.Debug("Erase successful!", Event.Success);
-                            WaitFm.Caption("Erased.");
-                        }
-                        else
-                            throw new Exception("Failed to flash the device.");
-                    }
-
-
-                    await Task.Delay(500);
-
-                    await CreateMessage("Installation complete", $"The software package {Program.Settings.Bin} has been successfully" +
-                        $" installed on your device. You can close this window.");
-
-                    WaitFm.Host.CloseTask();
-                    WindowManager.UnmountWindow(Controls, TaskManager.ForegroundWindow);
-                    TaskManager.ReleaseFLock();
-
-                    return;
-                }
-                else
-                {
-                    WaitFm.Debug("Failsafe: the selection was invalid.", Event.Critical);
-                    await CreateMessage("Software installation aborted", "A problem was encountered with the selection. " +
-                        "No changes have been made to your Espressif device. You can close this window.");
-
-                    WaitFm.Host.CloseTask();
-                    WindowManager.UnmountWindow(Controls, TaskManager.ForegroundWindow);
-                    TaskManager.ReleaseFLock();
-
-                    return;
-                }
             }
             else
                 throw new Exception($"The selection could not be determined due to an invalid value. {option}");
+
+            CreateRequest("Flash Operation", "The program is about to install software to your Espressif device. " +
+                    "Existing data on the device will be PERMANENTLY DELETED, are you sure?", "Allow software installation",
+                    "Cancel flash operation, no changes will be made", out int result);
+
+            if (result == 2)
+            {
+                WaitFm.Debug("User cancelled the flash operation.", Event.Critical);
+                await CreateMessage("Software installation aborted", "You've chosen to cancel the installation " +
+                    "of software to your Espressif device. No changes have been made. You can close this window.");
+
+                WaitFm.Host.CloseTask();
+                WindowManager.UnmountWindow(Controls, TaskManager.ForegroundWindow);
+                TaskManager.ReleaseFLock();
+
+                return;
+            }
+            else if (result == 1)
+            {
+                WaitFm.Debug("Flash operation started.");
+                WaitFm.Title("Installing software");
+
+                WaitFm.Caption("Checking device connection");
+                WaitFm.Debug("Checking device connection...");
+
+                if (!Program.Settings.PortFix)
+                    WaitFm.Debug($"Connecting to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}...");
+
+                string output = string.Empty;
+
+                if (!Program.Portable)
+                {
+                    if (ShellManager.RunCommand(out output, "py", $"-m esptool {(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} read_mac"))
+                    {
+                        if (!Program.Settings.PortFix)
+                            WaitFm.Debug($"Connected to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}", Event.Success);
+                        WaitFm.Debug($"Espressif device MAC: {output.Substring(output.IndexOf("MAC:") + 5, 17).ToUpper()}", Event.Success);
+
+                        WaitFm.Caption("Connection was successful");
+                    }
+                    else
+                        throw new Exception("Could not connect to the device.");
+                }
+                else
+                {
+                    if (ShellManager.RunCommand(out output, Program.Settings.EsptoolExe, $"{(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} read_mac"))
+                    {
+                        if (!Program.Settings.PortFix)
+                            WaitFm.Debug($"Connected to {Program.Settings.SelectedName} on {Program.Settings.SelectedPort}", Event.Success);
+                        WaitFm.Debug($"Espressif device MAC: {output.Substring(output.IndexOf("MAC:") + 5, 17).ToUpper()}", Event.Success);
+
+                        WaitFm.Caption("Connection was successful");
+                    }
+                    else
+                        throw new Exception("Could not connect to the device.");
+                }
+
+                WaitFm.Caption("Erasing flash memory");
+                WaitFm.Debug("Erasing flash memory chip...");
+
+                if (!Program.Portable)
+                {
+                    if (ShellManager.RunCommand(out output, "py", $"-m esptool {(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} erase_flash"))
+                    {
+                        WaitFm.Debug("Erase successful!", Event.Success);
+                        WaitFm.Caption("Erased.");
+                    }
+                    else
+                        throw new Exception("Failed to erase the device.");
+                }
+                else
+                {
+                    if (ShellManager.RunCommand(out output, Program.Settings.EsptoolExe, $"{(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} erase_flash"))
+                    {
+                        WaitFm.Debug("Erase successful!", Event.Success);
+                        WaitFm.Caption("Erased.");
+                    }
+                    else
+                        throw new Exception("Failed to erase the device.");
+                }
+
+                WaitFm.Caption("Writing new software image");
+                WaitFm.Debug("Writing new software image...");
+
+                if (!Program.Portable)
+                {
+                    if (ShellManager.RunCommand(out output, "py", $"-m esptool {(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} write_flash 0x0 \"{Program.Settings.Bin}\""))
+                    {
+                        WaitFm.Debug("Flash complete!", Event.Success);
+                        WaitFm.Caption("Installed.");
+                    }
+                    else
+                        throw new Exception("Failed to flash the device.");
+                }
+                else
+                {
+                    if (ShellManager.RunCommand(out output, Program.Settings.EsptoolExe, $"{(!Program.Settings.PortFix ? $"--port {Program.Settings.SelectedPort}" : "")} write_flash 0x0 \"{Program.Settings.Bin}\""))
+                    {
+                        WaitFm.Debug("Erase successful!", Event.Success);
+                        WaitFm.Caption("Erased.");
+                    }
+                    else
+                        throw new Exception("Failed to flash the device.");
+                }
+
+
+                await Task.Delay(500);
+
+                await CreateMessage("Installation complete", $"The software package {Program.Settings.Bin} has been successfully" +
+                    $" installed on your device. You can close this window.");
+
+                WaitFm.Host.CloseTask();
+                WindowManager.UnmountWindow(Controls, TaskManager.ForegroundWindow);
+                TaskManager.ReleaseFLock();
+
+                return;
+            }
+            else
+            {
+                WaitFm.Debug("Failsafe: the selection was invalid.", Event.Critical);
+                await CreateMessage("Software installation aborted", "A problem was encountered with the selection. " +
+                    "No changes have been made to your Espressif device. You can close this window.");
+
+                WaitFm.Host.CloseTask();
+                WindowManager.UnmountWindow(Controls, TaskManager.ForegroundWindow);
+                TaskManager.ReleaseFLock();
+
+                return;
+            }
         }
         private async void Search()
         {
