@@ -6,8 +6,8 @@
 </h3>
 <p align="center">
   <img alt="Build Passed" src="https://img.shields.io/static/v1?label=Build&message=Passed&color=limegreen&style=flat-square&logo=visualstudio"/>
-  <img alt="Latest rev2.1" src="https://img.shields.io/static/v1?label=Latest&message=rev2.1&color=limegreen&style=flat-square"/>
-  <img alt="Last Update" src="https://img.shields.io/static/v1?label=Last%20Update&message=30th%20Oct%202021&color=dodgerblue&style=flat-square"/>
+  <img alt="Latest rev2.2" src="https://img.shields.io/static/v1?label=Latest&message=rev2.2&color=limegreen&style=flat-square"/>
+  <img alt="Last Update" src="https://img.shields.io/static/v1?label=Last%20Update&message=26th%20March%202023&color=dodgerblue&style=flat-square"/>
   <br>
   <img alt="Watchers" src="https://img.shields.io/github/watchers/a4004/n2d?label=Watchers&style=flat-square&logo=github">
   <img alt="Stars" src="https://img.shields.io/github/stars/a4004/n2d?label=Stars&style=flat-square&logo=github">
