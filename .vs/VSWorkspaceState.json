@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\src"
   ],
-  "SelectedNode": "\\N2D22.sln",
+  "SelectedNode": "\\src\\N2D22.sln",
   "PreviewInSolutionExplorer": false
 }

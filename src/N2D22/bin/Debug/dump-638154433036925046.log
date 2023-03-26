@@ -1,0 +1,48 @@
+[ 26/03/2023 16:01:29]	Application init.
+[ 26/03/2023 16:01:29]	Creating MainWindow
+[ 26/03/2023 16:01:29]	taskmanager: Started setup.
+[ 26/03/2023 16:01:29]	windowmgr: Mounted window WaitFm into MainWindow
+[ 26/03/2023 16:01:30]	shellmgr: Running command "py --version"
+[ 26/03/2023 16:01:30]	shellmgr: The system reports no errors at the moment. Attempting to close the process.
+[ 26/03/2023 16:01:30]	shellmgr: Waiting for py (pid 15688) to exit. [1 of 3]
+[ 26/03/2023 16:01:30]	shellmgr: Waiting for py (pid 15688) to exit. [2 of 3]
+[ 26/03/2023 16:01:30]	shellmgr: py has exited. Exit code: 0.
+[ 26/03/2023 16:01:30]	shellmgr: Running command "py -c "import sys; print(sys.executable)""
+[ 26/03/2023 16:01:30]	shellmgr: The system reports no errors at the moment.
+[ 26/03/2023 16:01:30]	shellmgr: [INFO] The process (pid 15944) is running as a task and is limited to a runtime of 1800 seconds.
+[ 26/03/2023 16:01:30]	shellmgr: py stderr: 
+[ 26/03/2023 16:01:30]	setup: [ 1.17887]	Python is installed on this PC at "C:\Program Files\Python311\python.exe".
+[ 26/03/2023 16:01:31]	shellmgr: Running command "py -m esptool --help"
+[ 26/03/2023 16:01:31]	shellmgr: The system reports no errors at the moment. Attempting to close the process.
+[ 26/03/2023 16:01:31]	shellmgr: Waiting for py (pid 5608) to exit. [1 of 3]
+[ 26/03/2023 16:01:31]	shellmgr: Waiting for py (pid 5608) to exit. [2 of 3]
+[ 26/03/2023 16:01:31]	shellmgr: py has exited. Exit code: 0.
+[ 26/03/2023 16:01:31]	setup: [ 2.38441]	esptool.py is installed in the default Python environment.
+[ 26/03/2023 16:01:32]	setup: [ 3.38540]	Searching for device drivers.
+[ 26/03/2023 16:01:33]	setup: [ 4.38840]	Check "C:\Windows\system32\DriverStore\FileRepository\" for "silabser"
+[ 26/03/2023 16:01:33]	setup: [ 4.39240]	Check "C:\Windows\system32\DriverStore\FileRepository\" for "ch34ser"
+[ 26/03/2023 16:01:33]	setup: [ 4.39440]	Check "C:\Windows\system32\DriverStore\FileRepository\" for "ftdiport"
+[ 26/03/2023 16:01:33]	setup: [ 4.39640]	Check "C:\Windows\system32\DriverStore\FileRepository\" for "ftdibus"
+[ 26/03/2023 16:01:33]	setup: [ 4.39840]	Detected driver: SILABSER
+[ 26/03/2023 16:01:33]	windowmgr: Mounted window MessageFm into MainWindow
+[ 26/03/2023 16:01:38]	windowmgr: Request to unmount MessageFm into MainWindow requires control invokation.
+[ 26/03/2023 16:01:38]	windowmgr: Invoking the request on the UI thread.
+[ 26/03/2023 16:01:38]	windowmgr: Removing window MessageFm from MainWindow
+[ 26/03/2023 16:01:39]	setup: [ 10.42662]	Finished (10s).
+[ 26/03/2023 16:01:39]	taskmanager: setup finished in 10s.
+[ 26/03/2023 16:01:39]	windowmgr: Request to unmount WaitFm into MainWindow requires control invokation.
+[ 26/03/2023 16:01:39]	windowmgr: Invoking the request on the UI thread.
+[ 26/03/2023 16:01:39]	windowmgr: Removing window WaitFm from MainWindow
+[ 26/03/2023 16:01:39]	taskmanager: Started devicescan.
+[ 26/03/2023 16:01:39]	windowmgr: Mounted window WaitFm into MainWindow
+[ 26/03/2023 16:01:40]	devicescan: [ 1.01109]	Searching for devices...
+[ 26/03/2023 16:01:40]	devicescan: [ 1.13310]	Detected Communications Port on COM1
+[ 26/03/2023 16:01:40]	windowmgr: Mounted window RequestFm into MainWindow
+[ 26/03/2023 16:01:41]	windowmgr: Request to unmount RequestFm into MainWindow requires control invokation.
+[ 26/03/2023 16:01:41]	windowmgr: Invoking the request on the UI thread.
+[ 26/03/2023 16:01:41]	windowmgr: Removing window RequestFm from MainWindow
+[ 26/03/2023 16:01:41]	devicescan: [ 1.60975]	Connecting to Communications Port on COM1...
+[ 26/03/2023 16:01:41]	shellmgr: Running command "py -m esptool --port COM1 read_mac"
+[ 26/03/2023 16:01:41]	shellmgr: The system reports no errors at the moment.
+[ 26/03/2023 16:01:41]	shellmgr: [INFO] The process (pid 15284) is running as a task and is limited to a runtime of 1800 seconds.
+[ 26/03/2023 16:01:43]	Window destroyed. Exiting

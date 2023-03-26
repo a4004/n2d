@@ -63,6 +63,16 @@ namespace N2D22.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap help_96px {
+            get {
+                object obj = ResourceManager.GetObject("help_96px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon {
             get {
                 object obj = ResourceManager.GetObject("icon", resourceCulture);
@@ -76,6 +86,26 @@ namespace N2D22.Properties {
         internal static System.Drawing.Bitmap important_icon {
             get {
                 object obj = ResourceManager.GetObject("important_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap services_96px {
+            get {
+                object obj = ResourceManager.GetObject("services_96px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap usb_disconnected_96px {
+            get {
+                object obj = ResourceManager.GetObject("usb_disconnected_96px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

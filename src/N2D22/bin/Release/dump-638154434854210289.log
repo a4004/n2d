@@ -1,0 +1,131 @@
+[ 26/03/2023 16:03:22]	Application init.
+[ 26/03/2023 16:03:22]	Creating MainWindow
+[ 26/03/2023 16:03:22]	taskmanager: Started setup.
+[ 26/03/2023 16:03:22]	windowmgr: Mounted window WaitFm into MainWindow
+[ 26/03/2023 16:03:23]	shellmgr: Running command "py --version"
+[ 26/03/2023 16:03:23]	shellmgr: The system reports no errors at the moment. Attempting to close the process.
+[ 26/03/2023 16:03:23]	shellmgr: Waiting for py (pid 15112) to exit. [1 of 3]
+[ 26/03/2023 16:03:23]	shellmgr: Waiting for py (pid 15112) to exit. [2 of 3]
+[ 26/03/2023 16:03:23]	shellmgr: py has exited. Exit code: 0.
+[ 26/03/2023 16:03:23]	shellmgr: Running command "py -c "import sys; print(sys.executable)""
+[ 26/03/2023 16:03:23]	shellmgr: The system reports no errors at the moment.
+[ 26/03/2023 16:03:23]	shellmgr: [INFO] The process (pid 17196) is running as a task and is limited to a runtime of 1800 seconds.
+[ 26/03/2023 16:03:23]	shellmgr: py stderr: 
+[ 26/03/2023 16:03:23]	setup: [ 1.16924]	Python is installed on this PC at "C:\Program Files\Python311\python.exe".
+[ 26/03/2023 16:03:24]	shellmgr: Running command "py -m esptool --help"
+[ 26/03/2023 16:03:24]	shellmgr: The system reports no errors at the moment. Attempting to close the process.
+[ 26/03/2023 16:03:24]	shellmgr: Waiting for py (pid 11204) to exit. [1 of 3]
+[ 26/03/2023 16:03:25]	shellmgr: Waiting for py (pid 11204) to exit. [2 of 3]
+[ 26/03/2023 16:03:25]	shellmgr: py has exited. Exit code: 0.
+[ 26/03/2023 16:03:25]	setup: [ 2.33364]	esptool.py is installed in the default Python environment.
+[ 26/03/2023 16:03:26]	setup: [ 3.33627]	Searching for device drivers.
+[ 26/03/2023 16:03:27]	setup: [ 4.33901]	Check "C:\Windows\system32\DriverStore\FileRepository\" for "silabser"
+[ 26/03/2023 16:03:27]	setup: [ 4.33901]	Check "C:\Windows\system32\DriverStore\FileRepository\" for "ch34ser"
+[ 26/03/2023 16:03:27]	setup: [ 4.33901]	Check "C:\Windows\system32\DriverStore\FileRepository\" for "ftdiport"
+[ 26/03/2023 16:03:27]	setup: [ 4.33901]	Check "C:\Windows\system32\DriverStore\FileRepository\" for "ftdibus"
+[ 26/03/2023 16:03:27]	setup: [ 4.33901]	Detected driver: SILABSER
+[ 26/03/2023 16:03:27]	windowmgr: Mounted window MessageFm into MainWindow
+[ 26/03/2023 16:03:32]	windowmgr: Request to unmount MessageFm into MainWindow requires control invokation.
+[ 26/03/2023 16:03:32]	windowmgr: Invoking the request on the UI thread.
+[ 26/03/2023 16:03:32]	windowmgr: Removing window MessageFm from MainWindow
+[ 26/03/2023 16:03:33]	setup: [ 10.37135]	Finished (10s).
+[ 26/03/2023 16:03:33]	taskmanager: setup finished in 10s.
+[ 26/03/2023 16:03:33]	windowmgr: Request to unmount WaitFm into MainWindow requires control invokation.
+[ 26/03/2023 16:03:33]	windowmgr: Invoking the request on the UI thread.
+[ 26/03/2023 16:03:33]	windowmgr: Removing window WaitFm from MainWindow
+[ 26/03/2023 16:03:33]	taskmanager: Started devicescan.
+[ 26/03/2023 16:03:33]	windowmgr: Mounted window WaitFm into MainWindow
+[ 26/03/2023 16:03:34]	devicescan: [ 1.01072]	Searching for devices...
+[ 26/03/2023 16:03:34]	devicescan: [ 1.04972]	Detected Communications Port on COM1
+[ 26/03/2023 16:03:34]	windowmgr: Mounted window RequestFm into MainWindow
+[ 26/03/2023 16:03:50]	windowmgr: Request to unmount RequestFm into MainWindow requires control invokation.
+[ 26/03/2023 16:03:50]	windowmgr: Invoking the request on the UI thread.
+[ 26/03/2023 16:03:50]	windowmgr: Removing window RequestFm from MainWindow
+[ 26/03/2023 16:03:50]	devicescan: [ 17.27821]	The device was rejected by the user, device threshold is now 2 (was 1)
+[ 26/03/2023 16:03:51]	devicescan: [ 18.27987]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:03:52]	devicescan: [ 19.28094]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:03:53]	devicescan: [ 20.28224]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:03:54]	devicescan: [ 21.28359]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:03:55]	devicescan: [ 22.28460]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:03:56]	devicescan: [ 23.28546]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:03:57]	devicescan: [ 24.28710]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:03:58]	devicescan: [ 25.28883]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:03:59]	devicescan: [ 26.29012]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:00]	devicescan: [ 27.29155]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:01]	devicescan: [ 28.29252]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:01]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:02]	devicescan: [ 29.31449]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:02]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:03]	devicescan: [ 30.33099]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:03]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:04]	devicescan: [ 31.35501]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:04]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:05]	devicescan: [ 32.37061]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:05]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:06]	devicescan: [ 33.38487]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:06]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:07]	devicescan: [ 34.39843]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:07]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:08]	devicescan: [ 35.42002]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:08]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:09]	devicescan: [ 36.43816]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:09]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:10]	devicescan: [ 37.45631]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:10]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:11]	devicescan: [ 38.47819]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:11]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:12]	devicescan: [ 39.50289]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:12]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:13]	devicescan: [ 40.52358]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:13]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:14]	devicescan: [ 41.54006]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:14]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:15]	devicescan: [ 42.55412]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:15]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:16]	devicescan: [ 43.56850]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:16]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:17]	devicescan: [ 44.58507]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:17]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:18]	devicescan: [ 45.60148]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:18]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:19]	devicescan: [ 46.61549]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:19]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:20]	devicescan: [ 47.62971]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:20]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:21]	devicescan: [ 48.64465]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:21]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:22]	devicescan: [ 49.65934]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:22]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:23]	devicescan: [ 50.68416]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:23]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:24]	devicescan: [ 51.69716]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:24]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:25]	devicescan: [ 52.71347]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:25]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:26]	devicescan: [ 53.72924]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:26]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:27]	devicescan: [ 54.74519]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:27]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:28]	devicescan: [ 55.76018]	Searching for devices... [1 device is connected, but you've chosen to not use it]
+[ 26/03/2023 16:04:28]	windowmgr: Mounted window DriverTimeoutFm into MainWindow
+[ 26/03/2023 16:04:28]	devicescan: [ 55.84620]	Detected Silicon Labs CP210x USB to UART Bridge on COM3
+[ 26/03/2023 16:04:29]	windowmgr: Mounted window RequestFm into MainWindow
+[ 26/03/2023 16:04:31]	windowmgr: Request to unmount RequestFm into MainWindow requires control invokation.
+[ 26/03/2023 16:04:31]	windowmgr: Invoking the request on the UI thread.
+[ 26/03/2023 16:04:31]	windowmgr: Removing window RequestFm from MainWindow
+[ 26/03/2023 16:04:31]	devicescan: [ 58.17689]	Connecting to Silicon Labs CP210x USB to UART Bridge on COM3...
+[ 26/03/2023 16:04:31]	shellmgr: Running command "py -m esptool --port COM3 read_mac"
+[ 26/03/2023 16:04:31]	shellmgr: The system reports no errors at the moment.
+[ 26/03/2023 16:04:31]	shellmgr: [INFO] The process (pid 10340) is running as a task and is limited to a runtime of 1800 seconds.
+[ 26/03/2023 16:04:36]	shellmgr: py stderr: 
+[ 26/03/2023 16:04:36]	devicescan: [ 63.05280]	Connected to Silicon Labs CP210x USB to UART Bridge on COM3
+[ 26/03/2023 16:04:36]	devicescan: [ 63.05380]	Espressif device MAC: DC:4F:22:5F:3B:B4
+[ 26/03/2023 16:04:37]	devicescan: [ 64.05711]	Finished (64s).
+[ 26/03/2023 16:04:37]	taskmanager: devicescan finished in 64s.
+[ 26/03/2023 16:04:37]	windowmgr: Request to unmount WaitFm into MainWindow requires control invokation.
+[ 26/03/2023 16:04:37]	windowmgr: Invoking the request on the UI thread.
+[ 26/03/2023 16:04:37]	windowmgr: Removing window WaitFm from MainWindow
+[ 26/03/2023 16:04:37]	taskmanager: Started flasher.
+[ 26/03/2023 16:04:37]	windowmgr: Mounted window WaitFm into MainWindow
+[ 26/03/2023 16:04:38]	windowmgr: Mounted window RequestFm into MainWindow
+[ 26/03/2023 16:04:45]	Window destroyed. Exiting

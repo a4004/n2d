@@ -41,6 +41,21 @@ namespace N2D22
 
             result = RequestFm.Option;
         }
+        private async Task ShowHelpMessage(int expire = 0)
+        {
+            Invoke(new Action(() =>
+            {
+                WindowManager.MountWindow(Controls, new DriverTimeoutFm());
+            }));
+
+            if (expire > 0)
+            {
+                for (int i = 0; i < expire; i++)
+                    await Task.Delay(1000);
+
+                WindowManager.UnmountWindow(Controls, DriverTimeoutFm.Instance);
+            }
+        }
         private bool CreateSelRequest(out string file)
         {
             string[] tags = GithubManager.GetReleaseTags("spacehuhntech/esp8266_deauther");
@@ -306,11 +321,18 @@ FileMode:
             WaitFm.Debug("Searching for devices...");
 
             int threshold = 1;
+            int seconds_elasped = 0;
 Rescan:
             while (SerialBusManager.SerialPorts.Count() < threshold)
             {
                 await Task.Delay(1000);
                 WaitFm.Debug($"Searching for devices... {(threshold - 1 == 1 ? "[1 device is connected, but you've chosen to not use it]" : (threshold - 1 > 1 ? $"[{threshold - 1} devices are connected, but you've chosen not to use them]" : ""))}");
+                seconds_elasped++;
+
+                if (seconds_elasped % 10 == 0)
+                {
+                    await ShowHelpMessage(10);
+                }
             }
 
             WaitFm.Debug($"Detected {SerialBusManager.SerialDevices[threshold - 1]} on {SerialBusManager.SerialPorts[threshold - 1]}");
