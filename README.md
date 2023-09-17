@@ -14,6 +14,12 @@
   <img alt="Forks" src="https://img.shields.io/github/forks/a4004/n2d?label=Forks&style=flat-square&logo=github">
 </p>
 
+<p align="center">
+  <a href="https://visualstudio.microsoft.com/vs/"><img alt="Visual Studio" src="https://github.com/a4004/a4004/raw/main/www/svg/vs19.svg"/></a>
+  <a href="https://dotnet.microsoft.com/"><img alt="C#" src="https://github.com/a4004/a4004/raw/main/www/svg/csharp.svg"/></a>
+  <a href="https://www.microsoft.com/en-us/windows/"><img alt="Windows" src="https://github.com/a4004/a4004/raw/main/www/svg/w10.svg"/></a> 
+</p>
+
 ## Getting Started
 For a full guide on the tool, see the [Wiki](https://github.com/pseudo8086/n2d/wiki). You can download the latest release [here](https://github.com/pseudo8086/n2d/releases/latest).
 
